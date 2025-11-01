@@ -1,5 +1,4 @@
 import type { MouseEvent } from "react";
-import { TagIcon } from "../TagIcon.tsx";
 import { defaultTagProps } from "./data.ts";
 import { cn } from "../../../utils/className.ts";
 import type { TagColor, TagSize, TagProps } from "./data.ts";
@@ -71,12 +70,4 @@ const Tag = ({
   );
 };
 
-// 聚合组件
-const TagGroup = Object.assign(Tag, {
-  Icon: TagIcon,
-});
-
-// 默认导出
-export default TagGroup;
-// 具名导出
-export { Tag, TagIcon };
+export default Tag;

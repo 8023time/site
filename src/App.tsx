@@ -2,7 +2,7 @@ import "./App.css";
 import router from "./router/index";
 import Cursor from "./components/Cursor";
 import { RouterProvider } from "react-router";
-import { GridBackground, ParticlesBackground } from "./components/Background";
+import { GridBackground } from "./components/Background";
 
 export default function App() {
   return (
