@@ -1,4 +1,4 @@
-import { cn } from "../../utils/className.ts";
+import { cn } from "../../../utils/className.ts";
 import type { ReactNode } from "react";
 import { CardFooter } from "./CardFooter.tsx";
 import { CardBody } from "./CardBody.tsx";
@@ -63,7 +63,7 @@ const colorMap: Record<Color, { bg: string; border: string; text: string }> = {
     text: "text-purple-900",
   },
   indigo: {
-    bg: "bg-indigo-50",  
+    bg: "bg-indigo-50",
     border: "border-indigo-200",
     text: "text-indigo-900",
   },
@@ -107,4 +107,3 @@ const CardGroup = Object.assign(Card, {
 });
 
 export default CardGroup;
-export { Card, CardHeader, CardBody, CardFooter };

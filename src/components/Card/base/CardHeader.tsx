@@ -1,4 +1,4 @@
-import { cn } from "../../utils/className.ts";
+import { cn } from "../../../utils/className.ts";
 import type { ReactNode } from "react";
 
 interface CardHeaderProps {

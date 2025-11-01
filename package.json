@@ -20,15 +20,11 @@
     "styled-jsx": "^5.1.7",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.16",
-    "three": "^0.180.0",
-    "vanta": "^0.5.24"
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@egoist/tailwindcss-icons": "^1.9.0",
     "@eslint/js": "^9.36.0",
-    "@iconify/json": "^2.2.402",
-    "@iconify/tailwind": "^1.2.0",
-    "@iconify/tailwind4": "^1.0.6",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
