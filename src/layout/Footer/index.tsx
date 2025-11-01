@@ -15,12 +15,6 @@ export default function Footer() {
           "请君莫辞凌烟走",
           "惟愿神秀尽前时",
         ]}
-        typingSpeed={200}
-        deleteSpeed={100}
-        pauseTime={1500}
-        loop={true}
-        cursor={true}
-        cursorColor="#fff"
         className="text-sm text-muted-foreground"
       />
     </footer>

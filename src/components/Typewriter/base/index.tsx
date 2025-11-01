@@ -1,17 +1,6 @@
-import type { TypewriterProps } from "./data";
-import { defaultTypewriterProps } from "./data";
+import type { TypewriterProps } from "./type";
 import React, { useState, useEffect, useRef } from "react";
-
-// 渐变颜色数组
-const gradientColors = [
-  "rgb(243, 112, 85)",
-  "rgb(239, 78, 123)",
-  "rgb(161, 102, 171)",
-  "rgb(80, 115, 184)",
-  "rgb(16, 152, 173)",
-  "rgb(7, 179, 155)",
-  "rgb(111, 186, 130)",
-];
+import { defaultTypewriterProps, gradientColors } from "./data";
 
 const Typewriter: React.FC<TypewriterProps> = ({
   texts = defaultTypewriterProps.texts,
@@ -25,6 +14,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
   textColor = defaultTypewriterProps.textColor,
   mask = defaultTypewriterProps.mask,
   maskColor = defaultTypewriterProps.maskColor,
+  textSize = defaultTypewriterProps.textSize,
 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -37,26 +27,21 @@ const Typewriter: React.FC<TypewriterProps> = ({
     const currentText = texts[currentTextIndex];
     const speed = isDeleting ? deleteSpeed : typingSpeed;
 
-    // 清理旧的定时器
     if (intervalRef.current) clearTimeout(intervalRef.current);
 
     intervalRef.current = setTimeout(() => {
       if (!isDeleting) {
-        // 打字中
         if (displayedText.length < currentText.length) {
           setDisplayedText(currentText.slice(0, displayedText.length + 1));
         } else {
-          // 打完一段，暂停后开始删除（除非是最后一段且不循环）
           if (!loop && currentTextIndex === texts.length - 1) return;
 
           setTimeout(() => setIsDeleting(true), pauseTime);
         }
       } else {
-        // 删除中
         if (displayedText.length > 0) {
           setDisplayedText(displayedText.slice(0, -1));
         } else {
-          // 删除完毕，切换到下一段
           setIsDeleting(false);
           setCurrentTextIndex((prev) => (prev + 1) % texts.length);
         }
@@ -77,14 +62,12 @@ const Typewriter: React.FC<TypewriterProps> = ({
     loop,
   ]);
 
-  // 重置动画（当 texts 变化时）
   useEffect(() => {
     setDisplayedText("");
     setCurrentTextIndex(0);
     setIsDeleting(false);
   }, [texts]);
 
-  // 构造渐变 CSS 字符串
   const gradientStyle =
     textColor === "auto"
       ? {
@@ -92,7 +75,6 @@ const Typewriter: React.FC<TypewriterProps> = ({
           WebkitBackgroundClip: "text",
           backgroundClip: "text",
           color: "transparent",
-          // 回退颜色，针对不支持 -webkit-background-clip 的浏览器
           fallbackColor: gradientColors[0],
         }
       : { color: textColor };
@@ -101,7 +83,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
     <div className={`inline-block  ${className}`}>
       <span
         className="whitespace-pre-wrap overflow-hidden inline-block align-middle p-3 text-4xl"
-        style={{ position: "relative", ...gradientStyle }}
+        style={{ position: "relative", ...gradientStyle, fontSize: textSize }}
       >
         <span
           style={{

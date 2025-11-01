@@ -28,6 +28,9 @@ export default function IndexPage() {
             "代码、创意、无限可能。",
             "一起构建未来的Web!",
           ]}
+          textColor="auto"
+          mask={true}
+          textSize={25}
           className="text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-2xl leading-relaxed"
         />
       </div>
