@@ -8,8 +8,8 @@ export const MAIN_NAV_CONFIG: {
   logo?: string | HTMLElement;
 }[] = [
   { name: "首页", href: "/" },
-  { name: "前端", href: "/skill" },
-  { name: "后端", href: "/skill" },
+  { name: "前端", href: "/about" },
+  { name: "后端", href: "/about" },
   { name: "技能", href: "/skill" },
   { name: "关于我", href: "/about" },
   { name: "留言区", href: "/article" },

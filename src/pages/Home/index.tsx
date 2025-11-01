@@ -6,7 +6,7 @@ export default function Home() {
       <div className=" w-full h-full z-0">
         <BackGround />
       </div>
-      <div className="w-full h-500"></div>
+      <div className="w-full h-300"></div>
     </>
   );
 }
