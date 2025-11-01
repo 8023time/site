@@ -1,0 +1,61 @@
+export const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "Sass",
+  "Less",
+  "TailwindCSS",
+  "Vite",
+
+  "React",
+  "Next.js",
+  "Vue",
+  "Nuxt.js",
+  "Svelte",
+  "SvelteKit",
+  "wujie",
+
+  "Redux",
+  "Pinia",
+
+  "Ant Design",
+  "Element Plus",
+
+  "Node.js",
+  "Express.js",
+  "NestJS",
+
+  "MySQL",
+  "PostgreSQL",
+  "Redis",
+  "Prisma",
+
+  "Linux",
+  "Docker",
+  "Nginx",
+  "CI/CD",
+  "Vercel",
+
+  "Vitest",
+  "Jest",
+  "Playwright",
+  "ESLint",
+  "Prettier",
+  "Babel",
+  "Webpack",
+  "Rollup",
+
+  "Git",
+  "GitHub",
+  "GitLab",
+  "Gitee",
+  "VSCode",
+  "Figma",
+  "Axure RP",
+
+  "C",
+  "C++",
+  "Python",
+  "Go",
+];

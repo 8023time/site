@@ -1,0 +1,27 @@
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #8c8787;
+  border-radius: 2.5px;
+  transition: 0.35s background-color;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #535252;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.halo-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);
+  pointer-events: none;
+  z-index: -1;
+}
