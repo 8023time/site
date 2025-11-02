@@ -7,12 +7,7 @@ interface InfiniteViewProps {
   className?: string;
 }
 
-export default function InfiniteView({
-  src,
-  interval = 10000,
-  direction = "up",
-  className = "",
-}: InfiniteViewProps) {
+export default function InfiniteView({ src, interval = 10000, direction = "up", className = "" }: InfiniteViewProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState<number | null>(null);
   const [animating, setAnimating] = useState(false);
@@ -33,19 +28,13 @@ export default function InfiniteView({
           ? 0
           : currentIndex + 1
         : currentIndex === 0
-        ? src.length - 1
-        : currentIndex - 1
+          ? src.length - 1
+          : currentIndex - 1
     );
 
     setTimeout(() => {
-      setCurrentIndex((prev) =>
-        dir === "down"
-          ? prev === src.length - 1
-            ? 0
-            : prev + 1
-          : prev === 0
-          ? src.length - 1
-          : prev - 1
+      setCurrentIndex(prev =>
+        dir === "down" ? (prev === src.length - 1 ? 0 : prev + 1) : prev === 0 ? src.length - 1 : prev - 1
       );
       setNextIndex(null);
       setAnimating(false);
@@ -67,23 +56,14 @@ export default function InfiniteView({
       {nextIndex !== null && (
         <div
           className={`absolute inset-0 z-[-1] ${
-            direction === "up"
-              ? "animate-scrollUp"
-              : direction === "down"
-              ? "animate-scrollDown"
-              : ""
+            direction === "up" ? "animate-scrollUp" : direction === "down" ? "animate-scrollDown" : ""
           }`}
         >
-          <img
-            src={src[nextIndex]}
-            alt="transition"
-            className="w-full h-full object-fill"
-          />
+          <img src={src[nextIndex]} alt="transition" className="w-full h-full object-fill" />
         </div>
       )}
 
       {/* 图片下面的固定水波纹 */}
-      
 
       <style>{`
         @keyframes scrollUp {

@@ -4,14 +4,7 @@ import type { ReactNode } from "react";
  * @description: 标签颜色
  * @version: 1.0.0
  */
-export type TagColor =
-  | "blue"
-  | "green"
-  | "red"
-  | "yellow"
-  | "purple"
-  | "gray"
-  | "indigo";
+export type TagColor = "blue" | "green" | "red" | "yellow" | "purple" | "gray" | "indigo";
 
 /**
  * @description：标签尺寸

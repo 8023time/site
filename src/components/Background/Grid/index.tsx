@@ -91,10 +91,7 @@ const FluidGrid: React.FC<Props> = ({
       canvas.height / 2,
       Math.sqrt(canvas.width ** 2 + canvas.height ** 2) / 2
     );
-    gradient.addColorStop(
-      0,
-      colorMode === "dark" ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 0)"
-    );
+    gradient.addColorStop(0, colorMode === "dark" ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 0)");
     gradient.addColorStop(1, colorMode === "dark" ? "#0b0b0b" : "#fff");
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -147,12 +144,8 @@ const FluidGrid: React.FC<Props> = ({
       const subOffsetX = offsetX % squareSize;
       const subOffsetY = offsetY % squareSize;
 
-      const finalHoveredSquareX = Math.floor(
-        (mouseX + subOffsetX) / squareSize
-      );
-      const finalHoveredSquareY = Math.floor(
-        (mouseY + subOffsetY) / squareSize
-      );
+      const finalHoveredSquareX = Math.floor((mouseX + subOffsetX) / squareSize);
+      const finalHoveredSquareY = Math.floor((mouseY + subOffsetY) / squareSize);
 
       if (
         !hoveredSquareRef.current ||
@@ -192,8 +185,7 @@ const FluidGrid: React.FC<Props> = ({
     resizeCanvas();
 
     // Attach stable event listeners on the canvas DOM element
-    const currentHandleMouseMove = (e: MouseEvent) =>
-      handleMouseMoveRef.current(e);
+    const currentHandleMouseMove = (e: MouseEvent) => handleMouseMoveRef.current(e);
     const currentHandleMouseLeave = () => handleMouseLeaveRef.current();
 
     canvas.addEventListener("mousemove", currentHandleMouseMove);
@@ -219,14 +211,7 @@ const FluidGrid: React.FC<Props> = ({
     // The initializeCanvas function now returns the cleanup function
     const cleanup = initializeCanvas();
     return cleanup;
-  }, [
-    direction,
-    speed,
-    borderColor,
-    hoverFillColor,
-    squareSize,
-    initializeCanvas,
-  ]); // Dependencies drive re-initialization
+  }, [direction, speed, borderColor, hoverFillColor, squareSize, initializeCanvas]); // Dependencies drive re-initialization
 
   return (
     <div className="fixed inset-0 z-50 pointer-events-none w-full h-full">

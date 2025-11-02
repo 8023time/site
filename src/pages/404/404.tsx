@@ -55,7 +55,7 @@ export default function NotFound404() {
     const particles = particlesRef.current;
     const mouse = mouseRef.current;
 
-    particles.forEach((p) => {
+    particles.forEach(p => {
       // 鼠标交互
       const dx = p.x - mouse.x;
       const dy = p.y - mouse.y;
@@ -138,17 +138,11 @@ export default function NotFound404() {
   return (
     <div className="relative h-full w-full overflow-hidden">
       {/* 手写粒子画布 */}
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 -z-10 blur-xl"
-        style={{ background: "#fff" }}
-      />
+      <canvas ref={canvasRef} className="fixed inset-0 -z-10 blur-xl" style={{ background: "#fff" }} />
 
       {/* 404 文字 */}
       <div className="fixed inset-0 z-10 flex items-center justify-center bg-white mix-blend-screen">
-        <h1 className="m-0 p-0 text-center font-nerko text-black overflow-hidden">
-          404
-        </h1>
+        <h1 className="m-0 p-0 text-center font-nerko text-black overflow-hidden">404</h1>
       </div>
 
       {/* 内联样式 */}

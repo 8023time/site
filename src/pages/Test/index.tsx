@@ -17,7 +17,7 @@ export default function Test() {
 
   const reducer = (state: initDataType, action: Action) => {
     const { type, id } = action;
-    const item = state.find((item) => item.id === id)!;
+    const item = state.find(item => item.id === id)!;
     switch (type) {
       case "ADD":
         item.count++;
@@ -28,7 +28,7 @@ export default function Test() {
         return [...state];
 
       case "DELETE":
-        return state.filter((item) => item.id !== id);
+        return state.filter(item => item.id !== id);
 
       case "EDIT":
         break;
@@ -62,14 +62,14 @@ export default function Test() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => {
+          {data.map(item => {
             return (
               <tr key={item.id}>
                 <td align="center">
                   {item.isEdit ? (
                     <input
                       onBlur={() => dispatch({ type: "EDIT", id: item.id })}
-                      onChange={(e) =>
+                      onChange={e =>
                         dispatch({
                           type: "UPDATE_NAME",
                           id: item.id,
@@ -84,30 +84,14 @@ export default function Test() {
                 </td>
                 <td align="center">{item.price}</td>
                 <td align="center">
-                  <button
-                    onClick={() => dispatch({ type: "SUB", id: item.id })}
-                  >
-                    -
-                  </button>
+                  <button onClick={() => dispatch({ type: "SUB", id: item.id })}>-</button>
                   <span>{item.count}</span>
-                  <button
-                    onClick={() => dispatch({ type: "ADD", id: item.id })}
-                  >
-                    +
-                  </button>
+                  <button onClick={() => dispatch({ type: "ADD", id: item.id })}>+</button>
                 </td>
                 <td align="center">{item.price * item.count}</td>
                 <td align="center">
-                  <button
-                    onClick={() => dispatch({ type: "EDIT", id: item.id })}
-                  >
-                    编辑
-                  </button>
-                  <button
-                    onClick={() => dispatch({ type: "DELETE", id: item.id })}
-                  >
-                    删除
-                  </button>
+                  <button onClick={() => dispatch({ type: "EDIT", id: item.id })}>编辑</button>
+                  <button onClick={() => dispatch({ type: "DELETE", id: item.id })}>删除</button>
                 </td>
               </tr>
             );

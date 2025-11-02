@@ -28,11 +28,8 @@ const SiteCard = ({ name, logo, tags, description }: SiteCardprops) => {
             width={40}
             height={40}
             className="object-contain"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).setAttribute(
-                "data-error",
-                "1"
-              );
+            onError={e => {
+              (e.currentTarget as HTMLImageElement).setAttribute("data-error", "1");
             }}
           />
           <div className="flex flex-col gap-0.5">
@@ -40,7 +37,7 @@ const SiteCard = ({ name, logo, tags, description }: SiteCardprops) => {
               <div className="text-lg font-semibold">{name}</div>
             </div>
             <div className="flex flex-wrap gap-1 text-xs text-slate-400 font-thin">
-              {tags.map((tag) => (
+              {tags.map(tag => (
                 <span
                   key={tag}
                   className="inline-flex items-center text-[10px]/3 px-1.5 py-1 gap-1 font-medium text-default bg-elevated rounded-full"
@@ -53,15 +50,11 @@ const SiteCard = ({ name, logo, tags, description }: SiteCardprops) => {
         </div>
 
         {/* 底部描述 */}
-        <div className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 leading-6">
-          {description}
-        </div>
+        <div className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 leading-6">{description}</div>
       </div>
 
       {/* 右上角操作按钮容器（保持骨架） */}
-      <div className="flex gap-1 absolute top-2 right-2">
-        {/* 可放按钮或图标 */}
-      </div>
+      <div className="flex gap-1 absolute top-2 right-2">{/* 可放按钮或图标 */}</div>
     </Card>
   );
 };

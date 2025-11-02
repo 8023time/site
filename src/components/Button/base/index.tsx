@@ -26,25 +26,19 @@ const Button: React.FC<ButtonProps> = ({
     solid: {
       primary: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500",
       danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500",
-      warning:
-        "bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-400",
+      warning: "bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-400",
       info: "bg-cyan-600 text-white hover:bg-cyan-700 focus:ring-cyan-500",
     },
     outlined: {
-      primary:
-        "border border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500",
-      danger:
-        "border border-red-600 text-red-600 hover:bg-red-50 focus:ring-red-500",
-      warning:
-        "border border-yellow-500 text-yellow-500 hover:bg-yellow-50 focus:ring-yellow-400",
+      primary: "border border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500",
+      danger: "border border-red-600 text-red-600 hover:bg-red-50 focus:ring-red-500",
+      warning: "border border-yellow-500 text-yellow-500 hover:bg-yellow-50 focus:ring-yellow-400",
       info: "border border-cyan-600 text-cyan-600 hover:bg-cyan-50 focus:ring-cyan-500",
     },
     filled: {
-      primary:
-        "bg-blue-100 text-blue-700 hover:bg-blue-200 focus:ring-blue-500",
+      primary: "bg-blue-100 text-blue-700 hover:bg-blue-200 focus:ring-blue-500",
       danger: "bg-red-100 text-red-700 hover:bg-red-200 focus:ring-red-500",
-      warning:
-        "bg-yellow-100 text-yellow-700 hover:bg-yellow-200 focus:ring-yellow-400",
+      warning: "bg-yellow-100 text-yellow-700 hover:bg-yellow-200 focus:ring-yellow-400",
       info: "bg-cyan-100 text-cyan-700 hover:bg-cyan-200 focus:ring-cyan-500",
     },
     text: {

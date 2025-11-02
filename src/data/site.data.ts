@@ -19,22 +19,19 @@ export const siteData = [
     name: "Anthropic",
     logo: "i-logos:anthropic-icon",
     tags: ["AI", "聊天机器人"],
-    description:
-      "致力于打造更加智能、高效、安全的 AI 系统,为用户提供优质的语音交互体验。",
+    description: "致力于打造更加智能、高效、安全的 AI 系统,为用户提供优质的语音交互体验。",
   },
   {
     name: "Perplexity",
     logo: "i-simple-icons:perplexity",
     tags: ["AI", "搜索引擎"],
-    description:
-      "一款先进的对话式人工智能工具，它能实时提供详细且接近人类的回答",
+    description: "一款先进的对话式人工智能工具，它能实时提供详细且接近人类的回答",
   },
   {
     name: "Notion",
     logo: "i-ri:notion-fill",
     tags: ["AI", "写作"],
-    description:
-      "一款写作助手,主要功能包括写作、编辑、总结等,可以自动生成文章、会议日程、新闻报道、社交媒体文案等等",
+    description: "一款写作助手,主要功能包括写作、编辑、总结等,可以自动生成文章、会议日程、新闻报道、社交媒体文案等等",
   },
   {
     name: "Character",
@@ -65,8 +62,7 @@ export const siteData = [
     name: "Kimi",
     logo: "https://cdn.baiwumm.com/project/dream-site/kimi.svg",
     tags: ["AI", "智能助手"],
-    description:
-      "一个有着超大“内存”的智能助手,可以一口气读完二十万字的小说,还会上网冲浪,快来跟他聊聊吧",
+    description: "一个有着超大“内存”的智能助手,可以一口气读完二十万字的小说,还会上网冲浪,快来跟他聊聊吧",
   },
   {
     name: "Coze",

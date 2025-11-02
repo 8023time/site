@@ -40,33 +40,27 @@ const Card = ({
 
   const style: CSSProperties = {
     backgroundColor: bgColor,
-    borderColor: border
-      ? isHover && hoverBorderColor
-        ? hoverBorderColor
-        : borderColor || "transparent"
-      : undefined,
+    borderColor: border ? (isHover && hoverBorderColor ? hoverBorderColor : borderColor || "transparent") : undefined,
     borderStyle: border ? "solid" : undefined,
     borderWidth: border ? "1px" : undefined,
     borderRadius:
       rounded === "none"
         ? "0px"
         : rounded === "sm"
-        ? "0.125rem"
-        : rounded === "md"
-        ? "0.375rem"
-        : rounded === "lg"
-        ? "0.5rem"
-        : rounded === "xl"
-        ? "0.75rem"
-        : rounded === "2xl"
-        ? "1rem"
-        : "9999px",
+          ? "0.125rem"
+          : rounded === "md"
+            ? "0.375rem"
+            : rounded === "lg"
+              ? "0.5rem"
+              : rounded === "xl"
+                ? "0.75rem"
+                : rounded === "2xl"
+                  ? "1rem"
+                  : "9999px",
     width,
     height,
     transition: "all 0.2s",
-    boxShadow: shadow
-      ? "0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)"
-      : undefined,
+    boxShadow: shadow ? "0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)" : undefined,
   };
 
   return (

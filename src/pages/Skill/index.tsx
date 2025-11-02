@@ -10,7 +10,7 @@ export default function Skill() {
       </h2>
 
       <div className="flex flex-wrap gap-3 p-6 justify-center">
-        {skills.map((skill) => (
+        {skills.map(skill => (
           <Tag key={skill} size="md" color="blue">
             {"#" + skill}
           </Tag>

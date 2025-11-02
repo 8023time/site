@@ -27,15 +27,13 @@ const TOOLTIP_STYLES: TooltipStyles = {
   light: {
     backgroundColor: "#ffffff",
     color: "#1f2937",
-    boxShadow:
-      "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)",
+    boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)",
     border: "1px solid rgba(0,0,0,0.08)",
   },
   dark: {
     backgroundColor: "#1f2937",
     color: "#f3f4f6",
-    boxShadow:
-      "0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -2px rgba(0,0,0,0.2)",
+    boxShadow: "0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -2px rgba(0,0,0,0.2)",
   },
 };
 
@@ -109,20 +107,11 @@ const Tooltip: React.FC<
 
     if (placement.startsWith("top") && space.top < tooltip.height + gap) {
       newPlacement = placement.replace("top", "bottom") as Placement;
-    } else if (
-      placement.startsWith("bottom") &&
-      space.bottom < tooltip.height + gap
-    ) {
+    } else if (placement.startsWith("bottom") && space.bottom < tooltip.height + gap) {
       newPlacement = placement.replace("bottom", "top") as Placement;
-    } else if (
-      placement.startsWith("left") &&
-      space.left < tooltip.width + gap
-    ) {
+    } else if (placement.startsWith("left") && space.left < tooltip.width + gap) {
       newPlacement = placement.replace("left", "right") as Placement;
-    } else if (
-      placement.startsWith("right") &&
-      space.right < tooltip.width + gap
-    ) {
+    } else if (placement.startsWith("right") && space.right < tooltip.width + gap) {
       newPlacement = placement.replace("right", "left") as Placement;
     }
 
@@ -164,9 +153,7 @@ const Tooltip: React.FC<
 
     // 计算箭头偏移（相对于 tooltip 左上角）
     const arrowLeft = midX - left - arrowSize;
-    setArrowOffset(
-      Math.max(arrowSize, Math.min(arrowLeft, tooltip.width - arrowSize))
-    );
+    setArrowOffset(Math.max(arrowSize, Math.min(arrowLeft, tooltip.width - arrowSize)));
   }, [placement, arrowSize]);
 
   // 显示（绑定稳定实例并注册单例）
@@ -288,36 +275,28 @@ const Tooltip: React.FC<
               bottom: -arrowSize,
               left: arrowOffset,
               borderWidth: `${arrowSize}px ${arrowSize}px 0 ${arrowSize}px`,
-              borderColor: `${
-                isDark ? "#1f2937" : "#ffffff"
-              } transparent transparent transparent`,
+              borderColor: `${isDark ? "#1f2937" : "#ffffff"} transparent transparent transparent`,
               filter: "drop-shadow(0 2px 2px rgba(0,0,0,0.08))",
             }),
             ...(actualPlacement.startsWith("bottom") && {
               top: -arrowSize,
               left: arrowOffset,
               borderWidth: `0 ${arrowSize}px ${arrowSize}px ${arrowSize}px`,
-              borderColor: `transparent transparent ${
-                isDark ? "#1f2937" : "#ffffff"
-              } transparent`,
+              borderColor: `transparent transparent ${isDark ? "#1f2937" : "#ffffff"} transparent`,
               filter: "drop-shadow(0 -2px 2px rgba(0,0,0,0.08))",
             }),
             ...(actualPlacement.startsWith("left") && {
               right: -arrowSize,
               top: arrowOffset,
               borderWidth: `${arrowSize}px 0 ${arrowSize}px ${arrowSize}px`,
-              borderColor: `transparent transparent transparent ${
-                isDark ? "#1f2937" : "#ffffff"
-              }`,
+              borderColor: `transparent transparent transparent ${isDark ? "#1f2937" : "#ffffff"}`,
               filter: "drop-shadow(2px 0 2px rgba(0,0,0,0.08))",
             }),
             ...(actualPlacement.startsWith("right") && {
               left: -arrowSize,
               top: arrowOffset,
               borderWidth: `${arrowSize}px ${arrowSize}px ${arrowSize}px 0`,
-              borderColor: `transparent ${
-                isDark ? "#1f2937" : "#ffffff"
-              } transparent transparent`,
+              borderColor: `transparent ${isDark ? "#1f2937" : "#ffffff"} transparent transparent`,
               filter: "drop-shadow(-2px 0 2px rgba(0,0,0,0.08))",
             }),
           }}

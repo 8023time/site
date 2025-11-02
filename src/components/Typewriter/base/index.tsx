@@ -43,7 +43,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
           setDisplayedText(displayedText.slice(0, -1));
         } else {
           setIsDeleting(false);
-          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+          setCurrentTextIndex(prev => (prev + 1) % texts.length);
         }
       }
     }, speed);
@@ -51,16 +51,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
     return () => {
       if (intervalRef.current) clearTimeout(intervalRef.current);
     };
-  }, [
-    displayedText,
-    currentTextIndex,
-    isDeleting,
-    texts,
-    typingSpeed,
-    deleteSpeed,
-    pauseTime,
-    loop,
-  ]);
+  }, [displayedText, currentTextIndex, isDeleting, texts, typingSpeed, deleteSpeed, pauseTime, loop]);
 
   useEffect(() => {
     setDisplayedText("");

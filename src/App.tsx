@@ -14,12 +14,7 @@ export default function App() {
       <Cursor />
       {/* {背景效果} */}
       <div className="fixed top-0 left-0 w-full h-full -z-1">
-        <GridBackground
-          direction="diagonal"
-          speed={0.3}
-          squareSize={35}
-          borderColor="#eaeaea"
-        />
+        <GridBackground direction="diagonal" speed={0.3} squareSize={35} borderColor="#eaeaea" />
       </div>
       {/* {路由} */}
       <RouterProvider router={router}></RouterProvider>

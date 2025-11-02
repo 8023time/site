@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       </NavLink>
 
       <div className="flex gap-4">
-        {MAIN_NAV_CONFIG.map((item) => (
+        {MAIN_NAV_CONFIG.map(item => (
           <NavLink to={item.href ?? ""}>
             <Button variant="text">{item.name}</Button>
           </NavLink>

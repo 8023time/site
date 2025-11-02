@@ -15,7 +15,7 @@ const Site = () => {
 
       {/* 卡片网格 - 优化响应式布局 */}
       <div className="flex flex-wrap justify-center gap-4">
-        {siteData.map((site) => (
+        {siteData.map(site => (
           <SiteCard key={site.name} {...site} />
         ))}
       </div>
