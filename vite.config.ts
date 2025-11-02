@@ -9,8 +9,8 @@ export default defineConfig({
       "@": new URL("./src", import.meta.url).pathname,
     },
   },
-  server: {
-    host: "0.0.0.0", // 让所有局域网设备可访问
-    port: 5173,
-  },
+  // server: {
+  //   host: "0.0.0.0", // 让所有局域网设备可访问
+  //   port: 5173,
+  // },
 });

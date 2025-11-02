@@ -1,13 +1,23 @@
 import { NavLink } from "react-router";
 import logo from "../../assets/logo.svg";
+import { cn } from "../../utils/className";
 import { Tooltip } from "../../components/Tooltip";
 import { Button } from "../../components/Button/index";
 import { MAIN_NAV_CONFIG } from "../../data/header.data";
 import { SunRiseIcon, _8023timeIcon, GithubIcon } from "../../components/Icon";
 
-export default function Header() {
+interface HeaderProps {
+  className?: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
-    <header className="fixed top-0 left-0 flex gap-4 justify-between items-center h-14 p-10 dark:shadow-white-500/50 backdrop-blur transition-all w-full dark:shadow-[0_4px_6px_-1px_rgb(255,255,255,0.1)] z-50 ">
+    <header
+      className={cn(
+        "flex gap-4 justify-between items-center h-14 p-10 dark:shadow-white-500/50 backdrop-blur transition-all w-full dark:shadow-[0_4px_6px_-1px_rgb(255,255,255,0.1)] z-50 ",
+        className
+      )}
+    >
       <NavLink to="/">
         <img src={logo} alt="" className="w-35" />
       </NavLink>
@@ -37,4 +47,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;
