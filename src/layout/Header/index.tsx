@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       )}
     >
       <NavLink to="/">
-        <img src={logo} alt="" className="w-35" />
+        <img src={logo} className="w-35" />
       </NavLink>
 
       <div className="flex gap-4">
