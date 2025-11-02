@@ -5,9 +5,11 @@ import Content from "./Content";
 export default function Layout() {
   return (
     <>
-      <Header />
-      <Content />
-      <Footer />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <Content className="flex-1" />
+        <Footer className="" />
+      </div>
     </>
   );
 }

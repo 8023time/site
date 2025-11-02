@@ -1,8 +1,18 @@
 import { Typewriter } from "../../components/Typewriter/index";
+import { cn } from "../../utils/className";
 
-export default function Footer() {
+interface FooterProps {
+  className?: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <footer className="w-full h-14 flex justify-between items-center shadow-md dark:shadow-white/10 backdrop-blur px-10 z-50 ">
+    <footer
+      className={cn(
+        "w-full h-14 flex justify-between items-center shadow-md dark:shadow-white/10 backdrop-blur px-10 z-50",
+        className
+      )}
+    >
       {/* 左侧：版权信息 */}
       <span className="text-sm text-muted-foreground">
         ©2024-2025 By 8023time
@@ -19,4 +29,6 @@ export default function Footer() {
       />
     </footer>
   );
-}
+};
+
+export default Footer;
