@@ -1,7 +1,6 @@
 import StatisticsPage from "../pages/Statistics/index";
 import { createBrowserRouter } from "react-router";
 import SkillPage from "../pages/Skill/index";
-import AboutPage from "../pages/About/index";
 import HomePage from "../pages/Home/index";
 import TestPage from "../pages/Test/index";
 import NotFoundPage from "../pages/404/404";
@@ -20,10 +19,6 @@ const router = createBrowserRouter([
       {
         path: "/skill",
         Component: SkillPage,
-      },
-      {
-        path: "/about",
-        Component: AboutPage,
       },
       {
         path: "/test",

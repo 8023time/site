@@ -11,7 +11,6 @@ export const MAIN_NAV_CONFIG: {
   { name: "前端", href: "/about" },
   { name: "后端", href: "/about" },
   { name: "技能", href: "/skill" },
-  { name: "关于我", href: "/about" },
   { name: "留言区", href: "/article" },
   { name: "网站合集", href: "/site" },
   { name: "网站分析", href: "/statistics" },
