@@ -1,3 +1,4 @@
+import StatisticsPage from "../pages/Statistics/index";
 import { createBrowserRouter } from "react-router";
 import SkillPage from "../pages/Skill/index";
 import AboutPage from "../pages/About/index";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/site",
         Component: SitePage,
+      },
+      {
+        path: "/statistics",
+        Component: StatisticsPage,
       },
       {
         path: "*",

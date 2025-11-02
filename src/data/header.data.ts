@@ -14,5 +14,5 @@ export const MAIN_NAV_CONFIG: {
   { name: "关于我", href: "/about" },
   { name: "留言区", href: "/article" },
   { name: "网站合集", href: "/site" },
-  { name: "网站统计", href: "/chat" },
+  { name: "网站统计", href: "/statistics" },
 ];
