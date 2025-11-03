@@ -3,13 +3,10 @@ import router from "./router/index";
 import Cursor from "./components/Cursor";
 import { RouterProvider } from "react-router";
 import { GridBackground } from "./components/Background";
-import { ToastContainer } from "./components/Toast/base/index";
 
 export default function App() {
   return (
     <>
-      {/* {Toast信息提示容器} */}
-      <ToastContainer />
       {/* {鼠标效果} */}
       <Cursor />
       {/* {背景效果} */}

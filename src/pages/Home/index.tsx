@@ -1,15 +1,16 @@
 import BackGround from "./background/index";
-
-import { toast } from "../../components/Toast/base/index";
+import Content from "../../layout/Content/index";
+import MDXContent from "../../generated/test";
 
 export default function Home() {
-  toast.success("开发中.........", 100000000000000000000);
-
   return (
     <>
       <div className=" w-full h-full z-0">
         <BackGround />
       </div>
+      <Content>
+        <MDXContent></MDXContent>
+      </Content>
       <div className="w-full h-300"></div>
     </>
   );
