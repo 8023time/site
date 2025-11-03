@@ -11,7 +11,6 @@ export default function Home() {
       <Content>
         <MDXContent></MDXContent>
       </Content>
-      <div className="w-full h-300"></div>
     </>
   );
 }
