@@ -28,6 +28,7 @@ const SiteCard = ({ name, logo, tags, description }: SiteCardprops) => {
             width={40}
             height={40}
             className="object-contain"
+            loading="lazy"
             onError={e => {
               (e.currentTarget as HTMLImageElement).setAttribute("data-error", "1");
             }}

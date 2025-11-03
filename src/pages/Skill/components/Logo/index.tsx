@@ -1,14 +1,14 @@
 import React from "react";
+import type { LogoProps } from "./type";
+import { defaultLogoProps } from "./data";
 import { cn } from "../../../../utils/className";
 
-interface LogoProps {
-  src: string;
-  name: string;
-  className?: string;
-  hoverColor?: string;
-}
-
-const Logo: React.FC<LogoProps> = ({ src = "", name = "", className = "", hoverColor = "" }) => {
+const Logo: React.FC<LogoProps> = ({
+  src = defaultLogoProps.src,
+  name = defaultLogoProps.name,
+  className = defaultLogoProps.className,
+  hoverColor = defaultLogoProps.hoverColor,
+}) => {
   return (
     <div
       className={cn(
@@ -21,13 +21,13 @@ const Logo: React.FC<LogoProps> = ({ src = "", name = "", className = "", hoverC
         transition: "border-color 1s ease",
       }}
       onMouseEnter={e => {
-        (e.currentTarget as HTMLDivElement).style.borderColor = hoverColor;
+        (e.currentTarget as HTMLDivElement).style.borderColor = hoverColor!;
       }}
       onMouseLeave={e => {
         (e.currentTarget as HTMLDivElement).style.borderColor = "";
       }}
     >
-      <object type="image/svg+xml" data={src} className="w-full h-full object-contain" aria-label={name} />
+      <img src={src} className="w-full h-full object-contain" aria-label={name} loading="lazy" />
     </div>
   );
 };
