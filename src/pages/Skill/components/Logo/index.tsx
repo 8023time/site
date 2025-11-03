@@ -5,9 +5,10 @@ interface LogoProps {
   src: string;
   name: string;
   className?: string;
+  hoverColor?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ src = "", name = "", className = "" }) => {
+const Logo: React.FC<LogoProps> = ({ src = "", name = "", className = "", hoverColor = "" }) => {
   return (
     <div
       className={cn(
@@ -16,27 +17,17 @@ const Logo: React.FC<LogoProps> = ({ src = "", name = "", className = "" }) => {
         "transition-all duration-500 ease-out transform hover:-translate-y-1 hover:scale-105",
         className
       )}
+      style={{
+        transition: "border-color 1s ease",
+      }}
+      onMouseEnter={e => {
+        (e.currentTarget as HTMLDivElement).style.borderColor = hoverColor;
+      }}
+      onMouseLeave={e => {
+        (e.currentTarget as HTMLDivElement).style.borderColor = "";
+      }}
     >
-      {/* 光晕层，只在 hover 显示 */}
-      <div className="absolute inset-0 rounded-2xl opacity-0 blur-xl transition-opacity duration-700 group-hover:opacity-100" />
-
-      {/* 边框阴影，只在 hover */}
-      <div
-        className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{
-          border: "2px solid transparent",
-        }}
-      />
-
-      {/* Logo 图片 */}
-      <img
-        src={src}
-        alt={name}
-        width={60}
-        height={60}
-        loading="lazy"
-        className="relative z-10 transform transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-[3deg]"
-      />
+      <object type="image/svg+xml" data={src} className="w-full h-full object-contain" aria-label={name} />
     </div>
   );
 };
