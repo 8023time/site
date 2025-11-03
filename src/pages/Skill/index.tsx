@@ -1,25 +1,21 @@
+import { Container, Logo } from "./components";
 import { skills } from "../../data/skill.data";
 import { Tag } from "../../components/Tag";
 import { Content } from "../../layout";
-import { Container, Logo } from "./components";
 
 export default function Skill() {
   return (
-    <>
-      <Content>
-        <div>
-          {skills.map((item, index) => (
-            <Container key={item.name} speed={50} gap={40} direction={index % 2 === 0 ? "left" : "right"}>
-              {item.list.map(item => (
-                <div className="flex flex-col items-center justify-center gap-2">
-                  <Logo key={item.name} name={item.name} src={item.src} />
-                  <Tag key={item.name}>{item.name}</Tag>
-                </div>
-              ))}
-            </Container>
+    <Content>
+      {skills.map((item, index) => (
+        <Container key={item.name} speed={50} gap={40} direction={index % 2 === 0 ? "left" : "right"}>
+          {item.list.map(item => (
+            <div className="flex flex-col items-center justify-center gap-2">
+              <Logo key={item.name} name={item.name} src={item.src} />
+              <Tag key={item.name}>{item.name}</Tag>
+            </div>
           ))}
-        </div>
-      </Content>
-    </>
+        </Container>
+      ))}
+    </Content>
   );
 }
