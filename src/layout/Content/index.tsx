@@ -7,8 +7,13 @@ interface ContentProps {
 
 const Content: React.FC<ContentProps> = ({ className, children }) => {
   return (
-    <main className={cn("w-full flex justify-center px-[clamp(1rem,5vw,3rem)] pt-20", className)}>
-      <div className="w-full max-w-[860px]">{children}</div>
+    <main
+      className={cn(
+        "w-full flex justify-center px-[clamp(1rem,4vw,2rem)] sm:px-[clamp(1.5rem,5vw,3rem)] md:px-[clamp(2rem,6vw,4rem)]",
+        className
+      )}
+    >
+      <div className="w-full max-w-[min(1440px,95%)]">{children}</div>
     </main>
   );
 };

@@ -6,7 +6,7 @@ import { InfiniteViewBackground } from "../../../components/Background";
 
 export default function IndexPage() {
   return (
-    <div className="relative w-full h-screen overflow-visible">
+    <div className="relative w-full h-full rounded-3xl overflow-hidden ">
       {/* 无限视图层 */}
       <InfiniteViewBackground src={backgroundData} />
 

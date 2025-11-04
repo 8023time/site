@@ -6,13 +6,13 @@ import { Outlet } from "react-router";
 const Layout = () => {
   return (
     <>
-      <div className="flex min-h-screen flex-col">
-        <Header className="fixed top-0 left-0" />
+      <Header className="" />
+      <Content>
         <main className="flex-1">
-          <Outlet />;
+          <Outlet />
         </main>
-        <Footer />
-      </div>
+      </Content>
+      <Footer />
     </>
   );
 };
