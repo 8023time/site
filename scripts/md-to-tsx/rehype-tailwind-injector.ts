@@ -1,28 +1,52 @@
-import { visit } from "unist-util-visit";
+import { h } from "hastscript";
 import type { Root } from "hast";
+import { visit } from "unist-util-visit";
 import { cn } from "../../src/utils/className.ts";
 import { tailwindMap } from "../../src/theme/markdown-styles.ts";
 
 /**
- * Rehype 插件：遍历 HAST 树并注入 Tailwind 类名
+ * Rehype 插件：注入 Tailwind 样式（支持 main/dark，<pre> 特殊处理）。
  */
 export default function rehypeTailwindInjector() {
   return (tree: Root) => {
-    visit(tree, "element", node => {
+    visit(tree, "element", (node, index, parent) => {
       const tagName = node.tagName;
+      const styleConfig = tailwindMap[tagName as keyof typeof tailwindMap];
+      if (!styleConfig) return;
 
-      // 直接使用导入的 tailwindMap
-      if (tailwindMap[tagName as keyof typeof tailwindMap]) {
-        const classNames = tailwindMap[tagName as keyof typeof tailwindMap];
+      // 特殊处理 <pre>
+      if (tagName === "pre" && typeof styleConfig === "object" && "wrapper" in styleConfig) {
+        const { wrapper, main, traffic } = styleConfig;
 
-        if (!node.properties) {
-          node.properties = {};
+        const wrapperNode = h("div", { className: cn(wrapper) });
+
+        // 添加 macOS 交通灯
+        if (traffic) {
+          const trafficLights = h("div", { className: cn(traffic.bar) }, [
+            h("button", { className: cn(traffic.light, traffic.red) }),
+            h("button", { className: cn(traffic.light, traffic.yellow) }),
+            h("button", { className: cn(traffic.light, traffic.green) }),
+          ]);
+          wrapperNode.children.push(trafficLights);
         }
 
-        // 合并类名，防止覆盖已有的类（例如由其他 rehype 插件添加的）
-        const existingClass = node.properties.className || "";
-        node.properties.className = cn(classNames, existingClass);
+        // 应用 pre 主体样式
+        if (!node.properties) node.properties = {};
+        node.properties.className = cn(main, node.properties.className || "");
+
+        // 替换节点
+        wrapperNode.children.push(node);
+        if (parent && typeof index === "number") {
+          parent.children[index] = wrapperNode;
+        }
+        return;
       }
+
+      // 通用：只处理 main + dark
+      const { main, dark } = styleConfig as { main?: string; dark?: string };
+
+      if (!node.properties) node.properties = {};
+      node.properties.className = cn(main, dark, node.properties.className || "");
     });
   };
 }
