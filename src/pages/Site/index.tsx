@@ -8,7 +8,7 @@ const Site = () => {
     <Content>
       {/* 卡片网格 */}
       {siteData.map((group, i) => (
-        <>
+        <div key={i}>
           <div className="flex gap-10 justify-center py-10">
             <img src={group.logo} width={35} loading="lazy" />
             <span className="font-bold text-2xl ">{group.title}</span>
@@ -20,7 +20,7 @@ const Site = () => {
               </NavLink>
             ))}
           </div>
-        </>
+        </div>
       ))}
     </Content>
   );

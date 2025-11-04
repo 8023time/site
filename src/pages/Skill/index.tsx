@@ -11,7 +11,7 @@ export default function Skill() {
           {item.list.map(item => (
             <div className="flex flex-col items-center justify-center gap-2">
               <Logo key={item.name} name={item.name} src={item.src} hoverColor={item.color} />
-              <Tag key={item.name}>{item.name}</Tag>
+              <Tag>{item.name}</Tag>
             </div>
           ))}
         </Container>
