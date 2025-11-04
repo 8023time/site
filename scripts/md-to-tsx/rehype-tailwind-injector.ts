@@ -14,7 +14,7 @@ export default function rehypeTailwindInjector() {
       const styleConfig = tailwindMap[tagName as keyof typeof tailwindMap];
       if (!styleConfig) return;
 
-      // 特殊处理 <pre>
+      // ======== 特殊处理 <pre> ========
       if (tagName === "pre" && typeof styleConfig === "object" && "wrapper" in styleConfig) {
         const { wrapper, main, traffic } = styleConfig;
 
@@ -39,6 +39,20 @@ export default function rehypeTailwindInjector() {
         if (parent && typeof index === "number") {
           parent.children[index] = wrapperNode;
         }
+        return;
+      }
+
+      // ======== 特殊处理 <code> ========
+      if (tagName === "code" && typeof styleConfig === "object" && "main" in styleConfig && "dark" in styleConfig) {
+        const { main, dark } = styleConfig;
+
+        // 判断是否为内联 code：如果父节点是 pre，则跳过
+        const isInsidePre = parent && "tagName" in parent ? parent.tagName === "pre" : false;
+        if (isInsidePre) return; // 不处理代码块内的 <code>
+
+        if (!node.properties) node.properties = {};
+        node.properties.className = cn(main || "", dark || "", node.properties.className || "");
+
         return;
       }
 

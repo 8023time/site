@@ -131,8 +131,12 @@ const tailwindMap = {
 
   ol: {
     main: `
-      list-decimal list-outside pl-6 my-5 space-y-2
-      marker:text-gray-500
+      list-none pl-8 my-5 space-y-3 [counter-reset:list-counter]
+      [&_li]:[counter-increment:list-counter]
+      [&_li]:before:content-[counter(list-counter)] [&_li]:before:absolute [&_li]:before:left-[-2rem]
+      [&_li]:before:flex [&_li]:before:items-center [&_li]:before:justify-center [&_li]:before:w-6 [&_li]:before:h-6
+      [&_li]:before:rounded-full [&_li]:before:bg-gray-200 [&_li]:before:text-gray-700 [&_li]:before:text-sm
+      [&_li]:before:font-medium [&_li]:before:shadow-sm
     `,
     dark: `
     `,
@@ -140,12 +144,11 @@ const tailwindMap = {
 
   li: {
     main: `
-      text-lg text-gray-700 leading-relaxed
+      text-lg text-gray-700 leading-relaxed relative
     `,
     dark: `
     `,
   },
-
   // ===== 引用与代码块 =====
   blockquote: {
     main: `
@@ -160,9 +163,18 @@ const tailwindMap = {
 
   code: {
     main: `
-    `,
+    font-mono font-[JetBrainsMono,ui-monospace,Menlo,monospace]
+    text-[0.95rem] leading-relaxed
+    bg-gray-100 text-gray-800
+    px-[0.4em] py-[0.25em] rounded-md
+    border border-gray-200 shadow-sm
+    tracking-tight
+    transition-all duration-200 ease-out
+    hover:bg-gray-200/70 hover:border-gray-300
+    before:content-[''] after:content-['']
+  `,
     dark: `
-    `,
+  `,
   },
 
   pre: {
