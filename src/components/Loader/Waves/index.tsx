@@ -1,8 +1,8 @@
 const Waves = () => {
   return (
-    <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+    <div className="absolute right-0 bottom-0 left-0 w-full overflow-hidden leading-none">
       <svg
-        className="block w-full h-32 text-amber-50 dark:text-black"
+        className="block h-32 w-full text-amber-50 dark:text-black"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 24 150 28"
         preserveAspectRatio="none"
@@ -21,25 +21,25 @@ const Waves = () => {
             href="#gentle-wave"
             x="48"
             y="0"
-            className="fill-current opacity-50 animate-[wave1_100s_linear_infinite]"
+            className="animate-[wave1_100s_linear_infinite] fill-current opacity-50"
           />
           <use
             href="#gentle-wave"
             x="48"
             y="3"
-            className="fill-current opacity-70 animate-[wave2_90s_linear_infinite]"
+            className="animate-[wave2_90s_linear_infinite] fill-current opacity-70"
           />
           <use
             href="#gentle-wave"
             x="48"
             y="5"
-            className="fill-current opacity-90 animate-[wave3_80s_linear_infinite]"
+            className="animate-[wave3_80s_linear_infinite] fill-current opacity-90"
           />
           <use
             href="#gentle-wave"
             x="48"
             y="7"
-            className="fill-current opacity-100 animate-[wave4_75s_linear_infinite]"
+            className="animate-[wave4_75s_linear_infinite] fill-current opacity-100"
           />
         </g>
       </svg>

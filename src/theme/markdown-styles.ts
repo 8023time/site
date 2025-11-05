@@ -11,9 +11,9 @@ const tailwindMap = {
       scroll-mt-28 selection:bg-gray-200/50
     `,
     dark: `
+      text-gray-100 border-b-gray-600/60 selection:bg-gray-700/50
     `,
   },
-
   h2: {
     main: `
       text-4xl md:text-5xl font-sans font-bold tracking-tight
@@ -21,43 +21,43 @@ const tailwindMap = {
       scroll-mt-24 selection:bg-gray-200/50
     `,
     dark: `
+      text-gray-100 border-b-gray-600/40 selection:bg-gray-700/50
     `,
   },
-
   h3: {
     main: `
       text-3xl md:text-4xl font-sans font-semibold tracking-tight
       text-gray-800 mt-10 mb-4 scroll-mt-24
     `,
     dark: `
+      text-gray-100
     `,
   },
-
   h4: {
     main: `
       text-2xl font-sans font-medium text-gray-700 mt-8 mb-3
       border-l-4 border-gray-300 pl-3
     `,
     dark: `
+      text-gray-200 border-l-gray-600
     `,
   },
-
   h5: {
     main: `
       text-xl font-sans font-medium text-gray-600 mt-6 mb-2 uppercase tracking-wide
     `,
     dark: `
+      text-gray-300
     `,
   },
-
   h6: {
     main: `
       text-lg font-sans font-semibold text-gray-500 mt-4 mb-2 uppercase tracking-wider
     `,
     dark: `
+      text-gray-400
     `,
   },
-
   // ===== 基本文本 =====
   p: {
     main: `
@@ -65,48 +65,42 @@ const tailwindMap = {
       text-gray-700 mb-5 selection:bg-gray-200/50
     `,
     dark: `
+      text-gray-200 selection:bg-gray-700/50
     `,
   },
-
   strong: {
     main: `font-semibold text-gray-900`,
-    dark: ` `,
+    dark: `text-gray-100`,
   },
-
   em: {
     main: `italic text-gray-700`,
-    dark: ` `,
+    dark: `text-gray-200`,
   },
-
   del: {
     main: `line-through text-gray-500`,
-    dark: ` `,
+    dark: `text-gray-500`,
   },
-
   hr: {
     main: `my-10 border-t border-gray-200/60 rounded-full`,
-    dark: ` `,
+    dark: `border-t-gray-600/60`,
   },
-
   sup: {
     main: `align-super text-sm text-gray-600`,
-    dark: ` `,
+    dark: `text-gray-400`,
   },
-
   sub: {
     main: `align-sub text-sm text-gray-600`,
-    dark: ` `,
+    dark: `text-gray-400`,
   },
-
   kbd: {
     main: `
       px-2 py-1 bg-gray-100 text-gray-800 rounded-md font-mono text-sm
       border border-gray-300 shadow-sm
     `,
     dark: `
+      bg-gray-800 text-gray-200 border-gray-600
     `,
   },
-
   // ===== 链接 =====
   a: {
     main: `
@@ -116,9 +110,11 @@ const tailwindMap = {
       transition-all duration-200 ease-out
     `,
     dark: `
+      text-gray-200 decoration-gray-500/60
+      hover:decoration-gray-400 hover:text-white
+      focus:ring-gray-500/50
     `,
   },
-
   // ===== 列表 =====
   ul: {
     main: `
@@ -126,9 +122,9 @@ const tailwindMap = {
       marker:text-gray-500
     `,
     dark: `
+      marker:text-gray-400
     `,
   },
-
   ol: {
     main: `
       list-none pl-8 my-5 space-y-3 [counter-reset:list-counter]
@@ -139,14 +135,15 @@ const tailwindMap = {
       [&_li]:before:font-medium [&_li]:before:shadow-sm
     `,
     dark: `
+      [&_li]:before:bg-gray-700 [&_li]:before:text-gray-200
     `,
   },
-
   li: {
     main: `
       text-lg text-gray-700 leading-relaxed relative
     `,
     dark: `
+      text-gray-200
     `,
   },
   // ===== 引用与代码块 =====
@@ -157,38 +154,38 @@ const tailwindMap = {
       shadow-inner ring-1 ring-gray-200/40
     `,
     dark: `
-    
+      border-l-gray-600 bg-gray-800/70 text-gray-200 ring-gray-600/40
     `,
   },
-
   code: {
     main: `
-    font-mono font-[JetBrainsMono,ui-monospace,Menlo,monospace]
-    text-[0.95rem] leading-relaxed
-    bg-gray-100 text-gray-800
-    px-[0.4em] py-[0.25em] rounded-md
-    border border-gray-200 shadow-sm
-    tracking-tight
-    transition-all duration-200 ease-out
-    hover:bg-gray-200/70 hover:border-gray-300
-    before:content-[''] after:content-['']
-  `,
+      font-mono font-[JetBrainsMono,ui-monospace,Menlo,monospace]
+      text-[0.95rem] leading-relaxed
+      bg-gray-100 text-gray-800
+      px-[0.4em] py-[0.25em] rounded-md
+      border border-gray-200 shadow-sm
+      tracking-tight
+      transition-all duration-200 ease-out
+      hover:bg-gray-200/70 hover:border-gray-300
+      before:content-[''] after:content-['']
+    `,
     dark: `
-  `,
+      bg-gray-800 text-gray-200 border-gray-600
+      hover:bg-gray-700/70 hover:border-gray-500
+    `,
   },
-
   pre: {
     wrapper: `
-    relative rounded-3xl shadow-xl ring-1 ring-gray-200 border border-gray-300
-    overflow-hidden my-6 p-4 pt-10
-    dark:ring-gray-800 dark:border-gray-700
-    bg-[#262335]  
-  `,
+      relative rounded-3xl shadow-xl ring-1 ring-gray-200 border border-gray-300
+      overflow-hidden my-6 p-4 pt-10
+      dark:ring-gray-700 dark:border-gray-600
+      bg-[#262335]
+    `,
     main: `
-    bg-[#1e1e1e] text-gray-100 font-mono text-[15px] leading-[1.65]
-    rounded-2xl p-6 pt-10 overflow-x-auto border-t border-t-[#353942]
-    [counter-reset:line]
-  `,
+      bg-[#1e1e1e] text-gray-100 font-mono text-[15px] leading-[1.65]
+      rounded-2xl p-6 pt-10 overflow-x-auto border-t border-t-[#353942]
+      [counter-reset:line]
+    `,
     traffic: {
       bar: `absolute top-3 left-4 flex items-center gap-2`,
       light: `w-3.5 h-3.5 rounded-full transition-all duration-200 hover:scale-110`,
@@ -205,18 +202,17 @@ const tailwindMap = {
       transition-transform duration-300 hover:scale-[1.01]
     `,
     dark: `
+      ring-gray-600
     `,
   },
-
   figure: {
     main: `my-8 flex flex-col items-center`,
+    dark: ``, // No specific dark mode changes needed
   },
-
   figcaption: {
     main: `text-sm text-gray-500 mt-2 italic`,
-    dark: ` `,
+    dark: `text-gray-400`,
   },
-
   // ===== 表格 =====
   table: {
     main: `
@@ -224,51 +220,48 @@ const tailwindMap = {
       rounded-2xl overflow-hidden shadow-md ring-1 ring-gray-200
     `,
     dark: `
+      ring-gray-600
     `,
   },
-
   thead: {
     main: `
       bg-gray-100 text-gray-900 font-semibold
     `,
     dark: `
+      bg-gray-800 text-gray-100
     `,
   },
-
   tbody: {
     main: `divide-y divide-gray-200`,
-    dark: ` `,
+    dark: `divide-gray-600`,
   },
-
   tr: {
     main: `hover:bg-gray-50 transition-colors duration-150`,
-    dark: ` `,
+    dark: `hover:bg-gray-800/50`,
   },
-
   th: {
     main: `px-4 py-3 font-medium text-gray-900 border-b border-gray-200`,
-    dark: ` `,
+    dark: `text-gray-100 border-b-gray-600`,
   },
-
   td: {
     main: `px-4 py-3 text-gray-700 border-b border-gray-200`,
-    dark: ` `,
+    dark: `text-gray-200 border-b-gray-600`,
   },
-
   // ===== 折叠块 =====
   details: {
     main: `
       bg-gray-50 dark:bg-gray-900 rounded-2xl p-4 my-6 shadow-sm
-      ring-1 ring-gray-200 dark:ring-gray-700
+      ring-1 ring-gray-200 dark:ring-gray-600
       transition-all duration-300 open:shadow-md
     `,
+    dark: ``, // Already includes dark mode in main
   },
-
   summary: {
     main: `
       font-semibold cursor-pointer text-gray-800 hover:text-black
       dark:text-gray-200 dark:hover:text-white
     `,
+    dark: ``, // Already includes dark mode in main
   },
 };
 

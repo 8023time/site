@@ -15,20 +15,20 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header
       className={cn(
-        "flex justify-between items-center h-14 px-10 py-4 backdrop-blur transition-all w-full z-50",
+        "z-50 flex h-14 w-full items-center justify-between px-10 py-4 backdrop-blur transition-all",
         className
       )}
     >
       <Content>
-        <div className="flex justify-between items-center h-full">
+        <div className="flex h-full items-center justify-between">
           <NavLink to="/">
             <img src={logo} width={120} className="h-full object-contain" />
           </NavLink>
 
-          <div className="flex gap-4 items-center">
+          <div className="flex items-center gap-4">
             {MAIN_NAV_CONFIG.map(item => (
               <NavLink to={item.href ?? ""} key={item.name}>
-                <Button variant="text" className="h-full flex items-center">
+                <Button variant="text" className="flex h-full items-center">
                   {item.name}
                 </Button>
               </NavLink>

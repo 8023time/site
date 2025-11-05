@@ -71,9 +71,9 @@ const Typewriter: React.FC<TypewriterProps> = ({
       : { color: textColor };
 
   return (
-    <div className={`inline-block  ${className}`}>
+    <div className={`inline-block ${className}`}>
       <span
-        className="whitespace-pre-wrap overflow-hidden inline-block align-middle p-3 text-4xl"
+        className="inline-block overflow-hidden p-3 align-middle text-4xl whitespace-pre-wrap"
         style={{ position: "relative", ...gradientStyle, fontSize: textSize }}
       >
         <span
@@ -105,7 +105,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
         {/* 遮罩层 */}
         {mask && (
           <span
-            className="absolute inset-0 rounded-2xl animate-mask"
+            className="animate-mask absolute inset-0 rounded-2xl"
             style={{
               background: maskColor,
               opacity: 0.5,

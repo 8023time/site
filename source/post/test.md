@@ -6,22 +6,28 @@ description: 测试 rehypeTailwindInjector + Tailwind 样式映射在所有 Mark
 ---
 
 # 🧩 H1 标题 - 一级标题测试
+
 用于验证 `h1` 样式（粗体、大字号、底部边框）。
 
 ## ⚙️ H2 标题 - 二级标题
+
 验证次级标题的边框与间距。  
 支持内联元素：**粗体**、_斜体_、~~删除线~~、`行内代码`、<u>下划线</u>。
 
 ### 🪶 H3 标题
+
 用于检测多级结构层次的可读性与滚动锚点样式。
 
 #### 🌈 H4 标题
+
 验证左边框、层次间距、灰度视觉。
 
 ##### 🧱 H5 标题
+
 测试小型标题（全大写、间距紧凑）。
 
 ###### 🧩 H6 标题
+
 最小层级标题，确保缩放与权重正确。
 
 ---
@@ -31,7 +37,7 @@ description: 测试 rehypeTailwindInjector + Tailwind 样式映射在所有 Mark
 这是一个普通段落，用于测试段落行高、字间距、选择状态颜色、文字阴影与留白。
 第二行接续内容，包含 **粗体文字**、_斜体文字_、~~删除文字~~、`inline code` 以及脚注测试[^1]。
 
-**加粗句子**应明显高亮；_斜体部分_应具备轻微倾斜；  
+**加粗句子**应明显高亮；*斜体部分*应具备轻微倾斜；  
 `inline code` 应采用等宽字体、浅色背景。
 
 [^1]: 这是脚注，验证脚注渲染与分隔线显示。
@@ -42,13 +48,14 @@ description: 测试 rehypeTailwindInjector + Tailwind 样式映射在所有 Mark
 
 外部链接：[GitHub](https://github.com)  
 内部锚点：[跳转至代码块](#-代码块测试)  
-自动链接：<https://openai.com>  
+自动链接：<https://openai.com>
 
 ---
 
 ## 📋 列表测试
 
 ### 无序列表
+
 - 第一项（包含 **粗体** 与 `代码`）
   - 子项 1.1
     - 嵌套层 1.1.1
@@ -56,6 +63,7 @@ description: 测试 rehypeTailwindInjector + Tailwind 样式映射在所有 Mark
 - 第三项
 
 ### 有序列表
+
 1. 步骤一
 2. 步骤二
    1. 子步骤 2.1
@@ -63,6 +71,7 @@ description: 测试 rehypeTailwindInjector + Tailwind 样式映射在所有 Mark
 3. 步骤三
 
 ### 任务列表
+
 - [x] 已完成任务
 - [ ] 待办任务
 - [x] ✅ 验证状态图标
@@ -73,8 +82,10 @@ description: 测试 rehypeTailwindInjector + Tailwind 样式映射在所有 Mark
 
 > 一级引用：测试边框与灰色背景。
 > 包含 **粗体文字** 和 `代码块`。
->> 二级引用：测试多层嵌套。
->>> 第三级引用，用于检查阴影层次。
+>
+> > 二级引用：测试多层嵌套。
+> >
+> > > 第三级引用，用于检查阴影层次。
 
 ---
 
@@ -93,9 +104,11 @@ description: 测试 rehypeTailwindInjector + Tailwind 样式映射在所有 Mark
 ## 💻 代码块测试
 
 ### JavaScript
+
 ```js
 // 测试语法高亮与 VSCode 风格配色
 function greet(name) {
   console.log(`Hello, ${name}!`);
 }
 greet("8023time");
+```

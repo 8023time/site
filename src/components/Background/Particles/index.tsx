@@ -246,7 +246,7 @@ const Particles: React.FC<ParticlesProps> = ({
     disableRotation,
   ]);
 
-  return <div ref={containerRef} className={`relative w-full h-full ${className}`} />;
+  return <div ref={containerRef} className={`relative h-full w-full ${className}`} />;
 };
 
 export default Particles;

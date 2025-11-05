@@ -5,15 +5,15 @@ import { Outlet } from "react-router";
 
 const Layout = () => {
   return (
-    <>
-      <Header className="" />
+    <div className="flex min-h-screen flex-col justify-between">
+      <Header />
       <Content>
         <main className="flex-1">
           <Outlet />
         </main>
       </Content>
       <Footer />
-    </>
+    </div>
   );
 };
 

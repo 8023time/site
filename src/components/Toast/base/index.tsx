@@ -23,8 +23,8 @@ const Toast: React.FC<ToastProps> = ({ id, type, message, duration, onClose }) =
 
   return (
     <div
-      className={`px-4 py-2 rounded-lg shadow-lg mb-2 text-sm font-medium text-white transition-all duration-300 transform ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+      className={`mb-2 transform rounded-lg px-4 py-2 text-sm font-medium text-white shadow-lg transition-all duration-300 ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
       } ${type === "success" ? "bg-green-500" : type === "error" ? "bg-red-500" : "bg-blue-500"}`}
     >
       {message}
@@ -59,7 +59,7 @@ export const ToastContainer: React.FC = () => {
   }, [addToast]);
 
   return (
-    <div className="fixed top-5 right-5 z-[9999] flex flex-col items-end pointer-events-none">
+    <div className="pointer-events-none fixed top-5 right-5 z-[9999] flex flex-col items-end">
       {toasts.map(toast => (
         <Toast key={toast.id} {...toast} onClose={removeToast} />
       ))}

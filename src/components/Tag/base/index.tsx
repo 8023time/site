@@ -48,7 +48,7 @@ const Tag = ({
         colorMap[color!],
         sizeMap[size!],
         onClick && !disabled && "cursor-pointer hover:opacity-80",
-        disabled && "opacity-50 cursor-not-allowed",
+        disabled && "cursor-not-allowed opacity-50",
         className
       )}
       onClick={handleClick}
@@ -60,7 +60,7 @@ const Tag = ({
           onClick={handleRemove}
           className={cn(
             "ml-1 rounded-full p-0.5 transition-colors",
-            "hover:bg-black/10 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-current"
+            "hover:bg-black/10 focus:ring-2 focus:ring-current focus:ring-offset-1 focus:outline-none"
           )}
           aria-label="Remove"
           disabled={disabled}

@@ -15,7 +15,7 @@ export const Icon = ({
   return (
     <div
       className={cn(
-        "relative inline-block p-1.5 transition-colors duration-200 ease-in-out hover:bg-stone-100/50 dark:hover:bg-stone-700/50 rounded-xl",
+        "relative inline-block rounded-xl p-1.5 transition-colors duration-200 ease-in-out hover:bg-stone-100/50 dark:hover:bg-stone-700/50",
         className
       )}
       style={{
@@ -31,8 +31,8 @@ export const Icon = ({
           src={icon}
           alt={alt}
           className={cn(
-            "w-full h-full object-contain transition-transform duration-200 ease-in-out",
-            round && "rounded-full overflow-hidden"
+            "h-full w-full object-contain transition-transform duration-200 ease-in-out",
+            round && "overflow-hidden rounded-full"
           )}
           loading="lazy"
         />

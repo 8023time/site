@@ -142,7 +142,7 @@ export default function NotFound404() {
 
       {/* 404 文字 */}
       <div className="fixed inset-0 z-10 flex items-center justify-center bg-white mix-blend-screen">
-        <h1 className="m-0 p-0 text-center font-nerko text-black overflow-hidden">404</h1>
+        <h1 className="font-nerko m-0 overflow-hidden p-0 text-center text-black">404</h1>
       </div>
 
       {/* 内联样式 */}

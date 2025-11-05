@@ -10,5 +10,6 @@
   "proseWrap": "preserve",
   "endOfLine": "auto",
   "jsxSingleQuote": false,
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

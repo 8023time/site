@@ -66,7 +66,7 @@ const Card = ({
   return (
     <div
       style={style}
-      className={cn(className, "transition-all duration-200 p-3")}
+      className={cn(className, "p-3 transition-all duration-200")}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >

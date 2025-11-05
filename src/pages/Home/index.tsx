@@ -5,7 +5,7 @@ import MDXContent from "../../generated/test";
 export default function Home() {
   return (
     <>
-      <div className=" w-full h-250 z-0">
+      <div className="z-0 h-250 w-full">
         <BackGround />
       </div>
       <Content>

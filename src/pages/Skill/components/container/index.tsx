@@ -53,10 +53,10 @@ const InfiniteLoopContainer: React.FC<ContainerProps> = ({
   const items = React.Children.toArray(children);
 
   return (
-    <div ref={containerRef} className={`relative overflow-hidden w-full ${className} py-5`}>
+    <div ref={containerRef} className={`relative w-full overflow-hidden ${className} py-5`}>
       {/* 左右渐隐遮罩 */}
-      <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
-      <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+      <div className="pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" />
+      <div className="pointer-events-none absolute top-0 right-0 bottom-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" />
 
       <div className="relative">
         <div

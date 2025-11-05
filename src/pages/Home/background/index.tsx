@@ -6,16 +6,16 @@ import { InfiniteViewBackground } from "../../../components/Background";
 
 export default function IndexPage() {
   return (
-    <div className="relative w-full h-full rounded-3xl overflow-hidden ">
+    <div className="relative h-full w-full overflow-hidden rounded-3xl">
       {/* 无限视图层 */}
       <InfiniteViewBackground src={backgroundData} />
 
       {/* 内容层 */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full space-y-8 text-center">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center space-y-8 text-center">
         {/* 小猫 */}
         <NavLink
           to="/"
-          className="block transform transition-transform duration-300 hover:scale-100 active:scale-95 text-xs"
+          className="block transform text-xs transition-transform duration-300 hover:scale-100 active:scale-95"
         >
           <CatLoader />
         </NavLink>
@@ -31,11 +31,11 @@ export default function IndexPage() {
           textColor="auto"
           mask={true}
           textSize={25}
-          className="text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-2xl leading-relaxed"
+          className="text-xl leading-relaxed font-bold text-black drop-shadow-2xl sm:text-2xl md:text-3xl lg:text-4xl"
         />
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-16 z-10">
+      <div className="absolute bottom-0 left-0 z-10 h-16 w-full">
         <WavesLoader />
       </div>
     </div>

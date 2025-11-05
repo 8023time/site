@@ -42,13 +42,13 @@ export default function InfiniteView({ src, interval = 10000, direction = "up", 
   }
 
   return (
-    <div className={`w-full h-full absolute inset-0 z-[-1] ${className}`}>
+    <div className={`absolute inset-0 z-[-1] h-full w-full ${className}`}>
       {/* 当前层 */}
       <div className="absolute inset-0">
         <img
           src={src[currentIndex]}
           alt="current"
-          className="w-full h-full object-fill transition-transform duration-1000"
+          className="h-full w-full object-fill transition-transform duration-1000"
         />
       </div>
 
@@ -59,7 +59,7 @@ export default function InfiniteView({ src, interval = 10000, direction = "up", 
             direction === "up" ? "animate-scrollUp" : direction === "down" ? "animate-scrollDown" : ""
           }`}
         >
-          <img src={src[nextIndex]} alt="transition" className="w-full h-full object-fill" />
+          <img src={src[nextIndex]} alt="transition" className="h-full w-full object-fill" />
         </div>
       )}
 

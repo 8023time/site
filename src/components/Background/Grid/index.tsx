@@ -214,8 +214,8 @@ const FluidGrid: React.FC<Props> = ({
   }, [direction, speed, borderColor, hoverFillColor, squareSize, initializeCanvas]); // Dependencies drive re-initialization
 
   return (
-    <div className="fixed inset-0 z-50 pointer-events-none w-full h-full">
-      <canvas ref={canvasRef} className="w-full h-full border-none block" />
+    <div className="pointer-events-none fixed inset-0 z-50 h-full w-full">
+      <canvas ref={canvasRef} className="block h-full w-full border-none" />
     </div>
   );
 };
