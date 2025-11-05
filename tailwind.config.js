@@ -13,11 +13,11 @@ export default {
   ],
   theme: {
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
+      sm: "640px", // 手机
+      md: "768px", // 平板
+      lg: "1024px", // 宽屏
+      xl: "1280px", // 超宽屏
+      "2xl": "1536px", // 特大屏
     },
     extend: {
       colors: {
