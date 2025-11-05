@@ -1,11 +1,11 @@
 import { NavLink } from "react-router";
-import logo from "../../assets/logo.svg";
-import { cn } from "../../utils/className";
-import { Tooltip } from "../../components/Tooltip";
-import { Button } from "../../components/Button/index";
-import { MAIN_NAV_CONFIG } from "../../data/header.data";
-import { SunRiseIcon, _8023timeIcon, GithubIcon } from "../../components/Icon";
-import Content from "../Content";
+import logo from "@assets/logo.svg";
+import { cn } from "@utils/className";
+import { Tooltip } from "@components/Tooltip";
+import { Button } from "@components/Button/index";
+import { MAIN_NAV_CONFIG } from "@data/header.data";
+import { SunRiseIcon, _8023timeIcon, GithubIcon } from "@components/Icon";
+import Content from "@layout/Content/index";
 
 interface HeaderProps {
   className?: string;

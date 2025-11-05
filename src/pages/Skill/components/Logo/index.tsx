@@ -1,7 +1,7 @@
 import React from "react";
 import type { LogoProps } from "./type";
 import { defaultLogoProps } from "./data";
-import { cn } from "../../../../utils/className";
+import { cn } from "@utils/className";
 
 const Logo: React.FC<LogoProps> = ({
   src = defaultLogoProps.src,

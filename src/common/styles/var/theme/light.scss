@@ -1,0 +1,93 @@
+@use "../../mixins/namespace" as *;
+@use "../../mixins/color-variants" as *;
+
+// 浅色主题变量
+:root {
+  // === 核心背景色 ===
+  --#{$cm-namespace}-bg-color: #ffffff; // 元素级别背景色
+  --#{$cm-namespace}-bg-color-page: #f6f8fc; // 页面级别背景颜色
+
+  // === 功能色 ===
+  @include generate-color-variants("primary", #395ae3);
+  @include generate-color-variants("success", #0b9e40);
+  @include generate-color-variants("warning", #e68a00);
+  @include generate-color-variants("danger", #d93126);
+  @include generate-color-variants("error", #dd5c27);
+
+  // === 次级色 ===
+  @include generate-color-variants("info", #8a96a3);
+  @include generate-color-variants("secondary", #a3adbb);
+
+  // === 基本色 ===
+  --#{$cm-namespace}-color: #ffffff;
+  --#{$cm-namespace}-light: #f9f9f9;
+  --#{$cm-namespace}-dark: #1e2129;
+
+  // === 背景色 ===
+  --#{$cm-namespace}-bg-primary: #e6ecff;
+  --#{$cm-namespace}-bg-primary-rgb: 230, 236, 255;
+  --#{$cm-namespace}-bg-success: #e0f5d6;
+  --#{$cm-namespace}-bg-success-rgb: 224, 245, 214;
+  --#{$cm-namespace}-bg-warning: #fff2e0;
+  --#{$cm-namespace}-bg-warning-rgb: 255, 242, 224;
+  --#{$cm-namespace}-bg-danger: #ffe0d9;
+  --#{$cm-namespace}-bg-danger-rgb: 255, 224, 217;
+  --#{$cm-namespace}-bg-error: #ffe5d9;
+  --#{$cm-namespace}-bg-error-rgb: 255, 229, 217;
+  --#{$cm-namespace}-bg-info: #e4ebff;
+  --#{$cm-namespace}-bg-info-rgb: 228, 235, 255;
+  --#{$cm-namespace}-bg-secondary: #d5edfa;
+  --#{$cm-namespace}-bg-secondary-rgb: 213, 237, 250;
+
+  // === 中性背景 ===
+  --#{$cm-namespace}-bg-neutral: #f5f7fa;
+  --#{$cm-namespace}-bg-neutral-rgb: 245, 247, 250;
+  --#{$cm-namespace}-bg-neutral-light: #f9fafc;
+  --#{$cm-namespace}-bg-neutral-dark: #eef0f5;
+
+  // === 灰度色，适用于背景色 | 悬停色 ===
+  --#{$cm-namespace}-gray-100: #f9f9f9;
+  --#{$cm-namespace}-gray-100-rgb: 249, 249, 249;
+  --#{$cm-namespace}-gray-200: #f0f0f4;
+  --#{$cm-namespace}-gray-200-rgb: 240, 240, 244;
+  --#{$cm-namespace}-gray-300: #e1e2e8;
+  --#{$cm-namespace}-gray-300-rgb: 225, 226, 232;
+  --#{$cm-namespace}-gray-400: #c8cad3;
+  --#{$cm-namespace}-gray-400-rgb: 200, 202, 211;
+  --#{$cm-namespace}-gray-500: #9fa1b0;
+  --#{$cm-namespace}-gray-500-rgb: 159, 161, 176;
+  --#{$cm-namespace}-gray-600: #7d8093;
+  --#{$cm-namespace}-gray-600-rgb: 125, 128, 147;
+  --#{$cm-namespace}-gray-700: #53576d;
+  --#{$cm-namespace}-gray-700-rgb: 83, 87, 109;
+  --#{$cm-namespace}-gray-800: #2a2e3f;
+  --#{$cm-namespace}-gray-800-rgb: 42, 46, 63;
+  --#{$cm-namespace}-gray-900: #131726;
+  --#{$cm-namespace}-gray-900-rgb: 19, 23, 38;
+
+  // === 文本色 ===
+  --#{$cm-namespace}-text-muted: var(--#{$cm-namespace}-color-info-muted);
+  --#{$cm-namespace}-text-gray-100: var(--#{$cm-namespace}-gray-100);
+  --#{$cm-namespace}-text-gray-200: var(--#{$cm-namespace}-gray-200);
+  --#{$cm-namespace}-text-gray-300: var(--#{$cm-namespace}-gray-300);
+  --#{$cm-namespace}-text-gray-400: var(--#{$cm-namespace}-gray-400);
+  --#{$cm-namespace}-text-gray-500: var(--#{$cm-namespace}-gray-500);
+  --#{$cm-namespace}-text-gray-600: var(--#{$cm-namespace}-gray-600);
+  --#{$cm-namespace}-text-gray-700: var(--#{$cm-namespace}-gray-700);
+  --#{$cm-namespace}-text-gray-800: var(--#{$cm-namespace}-gray-800);
+  --#{$cm-namespace}-text-gray-900: var(--#{$cm-namespace}-gray-900);
+
+  // === 边框色 ===
+  --#{$cm-namespace}-border-color: #eaebf1;
+  --#{$cm-namespace}-border-dashed-color: #dbdfe9;
+
+  // === 阴影色 ===
+  --#{$cm-namespace}-box-shadow-xs: 0 0.1rem 0.75rem 0.25rem rgb(0 0 0 / 4%);
+  --#{$cm-namespace}-box-shadow-sm: 0 0.1rem 1rem 0.25rem rgb(0 0 0 / 5%);
+  --#{$cm-namespace}-box-shadow-md: 0 0.5rem 1.5rem 0.5rem rgb(0 0 0 / 7.5%);
+  --#{$cm-namespace}-box-shadow-lg: 0 1rem 2rem 1rem rgb(0 0 0 / 10%);
+
+  // === 卡片色 ===
+  --#{$cm-namespace}-root-card-box-shadow: 0px 3px 6px 0px rgb(0 0 0 / 15%);
+  --#{$cm-namespace}-root-card-border-color: #f1f1f4;
+}

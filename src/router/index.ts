@@ -1,11 +1,11 @@
-import StatisticsPage from "../pages/Statistics/index";
+import StatisticsPage from "@pages/Statistics/index";
 import { createBrowserRouter } from "react-router";
-import SkillPage from "../pages/Skill/index";
-import HomePage from "../pages/Home/index";
-import TestPage from "../pages/Test/index";
-import NotFoundPage from "../pages/404/404";
-import SitePage from "../pages/Site/index";
-import Layout from "../layout/index";
+import SkillPage from "@pages/Skill/index";
+import HomePage from "@pages/Home/index";
+import TestPage from "@pages/Test/index";
+import NotFoundPage from "@pages/404/404";
+import SitePage from "@pages/Site/index";
+import Layout from "@layout/index";
 
 const router = createBrowserRouter([
   {

@@ -1,4 +1,4 @@
-import { cn } from "../../utils/className";
+import { cn } from "@utils/className";
 
 interface ContentProps {
   className?: string;

@@ -1,6 +1,6 @@
 import type { IconProps } from "./data";
 import { defaultIconProps } from "./data";
-import { cn } from "../../../utils/className";
+import { cn } from "../../../common/utils/className";
 
 export const Icon = ({
   icon = defaultIconProps.icon,

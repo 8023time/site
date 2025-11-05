@@ -1,6 +1,6 @@
-import { Typewriter } from "../../components/Typewriter/index";
-import { cn } from "../../utils/className";
-import Content from "../Content/index";
+import { Typewriter } from "@components/Typewriter/index";
+import { cn } from "@utils/className";
+import Content from "@layout/Content/index";
 
 interface FooterProps {
   className?: string;

@@ -1,6 +1,6 @@
 import type { MouseEvent } from "react";
 import { defaultTagProps } from "./data.ts";
-import { cn } from "../../../utils/className.ts";
+import { cn } from "../../../common/utils/className.ts";
 import type { TagColor, TagSize, TagProps } from "./data.ts";
 
 const colorMap: Record<TagColor, string> = {

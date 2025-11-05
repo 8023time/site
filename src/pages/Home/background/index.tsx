@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import { Typewriter } from "../../../components/Typewriter";
-import { backgroundData } from "../../../data/background.data";
+import { backgroundData } from "../../../common/data/background.data";
 import { WavesLoader, CatLoader } from "../../../components/Loader";
 import { InfiniteViewBackground } from "../../../components/Background";
 

@@ -55,9 +55,6 @@ importers:
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
-      tailwindcss:
-        specifier: ^4.1.16
-        version: 4.1.16
       three:
         specifier: ^0.180.0
         version: 0.180.0
@@ -77,6 +74,9 @@ importers:
       "@shikijs/rehype":
         specifier: ^3.14.0
         version: 3.14.0
+      "@tailwindcss/postcss":
+        specifier: ^4.1.16
+        version: 4.1.16
       "@types/hast":
         specifier: ^3.0.4
         version: 3.0.4
@@ -107,6 +107,9 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
+      postcss:
+        specifier: ^8.5.6
+        version: 8.5.6
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -116,6 +119,9 @@ importers:
       sass:
         specifier: ^1.93.3
         version: 1.93.3
+      tailwindcss:
+        specifier: ^4.1.16
+        version: 4.1.16
       tsx:
         specifier: ^4.20.6
         version: 4.20.6
@@ -130,6 +136,11 @@ importers:
         version: 7.1.12(@types/node@24.9.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.93.3)(tsx@4.20.6)
 
 packages:
+  "@alloc/quick-lru@5.2.0":
+    resolution:
+      { integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw== }
+    engines: { node: ">=10" }
+
   "@babel/code-frame@7.27.1":
     resolution:
       { integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg== }
@@ -902,6 +913,10 @@ packages:
     resolution:
       { integrity: sha512-2OSv52FRuhdlgyOQqgtQHuCgXnS8nFSYRp2tJ+4WZXKgTxqPy7SMSls8c3mPT5pkZ17SBToGM5LHEJBO7miEdg== }
     engines: { node: ">= 10" }
+
+  "@tailwindcss/postcss@4.1.16":
+    resolution:
+      { integrity: sha512-Qn3SFGPXYQMKR/UtqS+dqvPrzEeBZHrFA92maT4zijCVggdsXnDBMsPFJo1eArX3J+O+Gi+8pV4PkqjLCNBk3A== }
 
   "@tailwindcss/vite@4.1.16":
     resolution:
@@ -2614,6 +2629,8 @@ packages:
       { integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A== }
 
 snapshots:
+  "@alloc/quick-lru@5.2.0": {}
+
   "@babel/code-frame@7.27.1":
     dependencies:
       "@babel/helper-validator-identifier": 7.28.5
@@ -3167,6 +3184,14 @@ snapshots:
       "@tailwindcss/oxide-wasm32-wasi": 4.1.16
       "@tailwindcss/oxide-win32-arm64-msvc": 4.1.16
       "@tailwindcss/oxide-win32-x64-msvc": 4.1.16
+
+  "@tailwindcss/postcss@4.1.16":
+    dependencies:
+      "@alloc/quick-lru": 5.2.0
+      "@tailwindcss/node": 4.1.16
+      "@tailwindcss/oxide": 4.1.16
+      postcss: 8.5.6
+      tailwindcss: 4.1.16
 
   "@tailwindcss/vite@4.1.16(vite@7.1.12(@types/node@24.9.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.93.3)(tsx@4.20.6))":
     dependencies:

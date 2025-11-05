@@ -1,7 +1,7 @@
 import { Container, Logo } from "./components";
-import { skills } from "../../data/skill.data";
-import { Tag } from "../../components/Tag";
-import { Content } from "../../layout";
+import { skills } from "@data/skill.data";
+import { Tag } from "@components/Tag";
+import { Content } from "@layout/index";
 
 export default function Skill() {
   return (

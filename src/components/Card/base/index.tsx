@@ -1,5 +1,5 @@
 import type { ReactNode, CSSProperties } from "react";
-import { cn } from "../../../utils/className.ts";
+import { cn } from "../../../common/utils/className.ts";
 import { useState } from "react";
 
 interface CardProps {
