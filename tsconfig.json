@@ -13,7 +13,8 @@
       "@layout/*": ["src/layout/*"],
       "@router/*": ["src/router/*"],
       "@generated/*": ["src/generated/*"],
-      "@data/*": ["src/common/data/*"]
+      "@data/*": ["src/common/data/*"],
+      "@hooks/*": ["src/hooks/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
