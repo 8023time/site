@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 interface Particle {
   x: number;
@@ -18,7 +18,7 @@ export default function NotFound404() {
   const [isHovering, setIsHovering] = useState(false);
 
   // 颜色池
-  const colors = ["#f00", "#0f0", "#00f", "#ff0", "#0ff", "#f0f"];
+  const colors = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f'];
 
   // 初始化粒子
   const initParticles = (width: number, height: number) => {
@@ -43,19 +43,19 @@ export default function NotFound404() {
   const animate = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const { width, height } = canvas;
 
     // 清屏（留尾巴效果）
-    ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
     ctx.fillRect(0, 0, width, height);
 
     const particles = particlesRef.current;
     const mouse = mouseRef.current;
 
-    particles.forEach(p => {
+    particles.forEach((p) => {
       // 鼠标交互
       const dx = p.x - mouse.x;
       const dy = p.y - mouse.y;
@@ -116,33 +116,33 @@ export default function NotFound404() {
 
   useEffect(() => {
     resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
     const canvas = canvasRef.current;
     if (canvas) {
-      canvas.addEventListener("mousemove", handleMouseMove);
-      canvas.addEventListener("mouseenter", () => setIsHovering(true));
-      canvas.addEventListener("mouseleave", () => setIsHovering(false));
+      canvas.addEventListener('mousemove', handleMouseMove);
+      canvas.addEventListener('mouseenter', () => setIsHovering(true));
+      canvas.addEventListener('mouseleave', () => setIsHovering(false));
     }
 
     animate();
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener('resize', resizeCanvas);
       if (canvas) {
-        canvas.removeEventListener("mousemove", handleMouseMove);
+        canvas.removeEventListener('mousemove', handleMouseMove);
       }
       cancelAnimationFrame(animationIdRef.current);
     };
   }, [canvasRef, mouseRef, particlesRef, isHovering]);
 
   return (
-    <div className="relative h-full w-full overflow-hidden">
+    <div className='relative h-full w-full overflow-hidden'>
       {/* 手写粒子画布 */}
-      <canvas ref={canvasRef} className="fixed inset-0 -z-10 blur-xl" style={{ background: "#fff" }} />
+      <canvas ref={canvasRef} className='fixed inset-0 -z-10 blur-xl' style={{ background: '#fff' }} />
 
       {/* 404 文字 */}
-      <div className="fixed inset-0 z-10 flex items-center justify-center bg-white mix-blend-screen">
-        <h1 className="font-nerko m-0 overflow-hidden p-0 text-center text-black">404</h1>
+      <div className='fixed inset-0 z-10 flex items-center justify-center bg-white mix-blend-screen'>
+        <h1 className='font-nerko m-0 overflow-hidden p-0 text-center text-black'>404</h1>
       </div>
 
       {/* 内联样式 */}

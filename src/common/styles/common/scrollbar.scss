@@ -18,7 +18,7 @@
 }
 
 .halo-container::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);

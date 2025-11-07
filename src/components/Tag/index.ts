@@ -1,3 +1,3 @@
-import Tag from "./base/index";
+import Tag from './base/index';
 
 export { Tag };

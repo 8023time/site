@@ -15,7 +15,7 @@ export interface Props {
    * @default: "right"
    * @version: 1.0.0
    */
-  direction?: "diagonal" | "up" | "right" | "down" | "left";
+  direction?: 'diagonal' | 'up' | 'right' | 'down' | 'left';
   /**
    * @description: 动画的速度 (单位: 像素/秒)
    * @default: 1

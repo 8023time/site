@@ -56,7 +56,7 @@ export interface TypewriterProps {
    * @default: false
    * @version: 1.0.0
    */
-  textColor?: string | "auto";
+  textColor?: string | 'auto';
   /**
    * @description: 是否需要遮罩层
    * @default: false

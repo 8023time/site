@@ -1,6 +1,6 @@
-import { defaultProps } from "./data";
-import type { GridOffset, Props } from "./type";
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import { defaultProps } from './data';
+import type { GridOffset, Props } from './type';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 
 const FluidGrid: React.FC<Props> = ({
   direction = defaultProps.direction,
@@ -17,7 +17,7 @@ const FluidGrid: React.FC<Props> = ({
   const numSquaresY = useRef<number>(0);
   const gridOffset = useRef<GridOffset>({ x: 0, y: 0 });
   const hoveredSquareRef = useRef<GridOffset | null>(null);
-  const [colorMode] = useState<string>("light"); // Removed setter since its logic is external
+  const [colorMode] = useState<string>('light'); // Removed setter since its logic is external
 
   // Use useMemo to stabilize the canvas context reference
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
@@ -89,10 +89,10 @@ const FluidGrid: React.FC<Props> = ({
       0,
       canvas.width / 2,
       canvas.height / 2,
-      Math.sqrt(canvas.width ** 2 + canvas.height ** 2) / 2
+      Math.sqrt(canvas.width ** 2 + canvas.height ** 2) / 2,
     );
-    gradient.addColorStop(0, colorMode === "dark" ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 0)");
-    gradient.addColorStop(1, colorMode === "dark" ? "#0b0b0b" : "#fff");
+    gradient.addColorStop(0, colorMode === 'dark' ? 'rgba(0, 0, 0, 0)' : 'rgba(255, 255, 255, 0)');
+    gradient.addColorStop(1, colorMode === 'dark' ? '#0b0b0b' : '#fff');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }, [borderColor, hoverFillColor, squareSize, colorMode]);
@@ -106,19 +106,19 @@ const FluidGrid: React.FC<Props> = ({
     const modulo = (n: number, m: number) => ((n % m) + m) % m;
 
     switch (direction) {
-      case "right":
+      case 'right':
         offset.x = modulo(offset.x - effectiveSpeed, size);
         break;
-      case "left":
+      case 'left':
         offset.x = modulo(offset.x + effectiveSpeed, size);
         break;
-      case "up":
+      case 'up':
         offset.y = modulo(offset.y + effectiveSpeed, size);
         break;
-      case "down":
+      case 'down':
         offset.y = modulo(offset.y - effectiveSpeed, size);
         break;
-      case "diagonal":
+      case 'diagonal':
         offset.x = modulo(offset.x - effectiveSpeed, size);
         offset.y = modulo(offset.y - effectiveSpeed, size);
         break;
@@ -159,7 +159,7 @@ const FluidGrid: React.FC<Props> = ({
         drawGrid();
       }
     },
-    [squareSize, drawGrid]
+    [squareSize, drawGrid],
   );
 
   const handleMouseLeave = useCallback(() => {
@@ -181,16 +181,16 @@ const FluidGrid: React.FC<Props> = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    ctxRef.current = canvas.getContext("2d");
+    ctxRef.current = canvas.getContext('2d');
     resizeCanvas();
 
     // Attach stable event listeners on the canvas DOM element
     const currentHandleMouseMove = (e: MouseEvent) => handleMouseMoveRef.current(e);
     const currentHandleMouseLeave = () => handleMouseLeaveRef.current();
 
-    canvas.addEventListener("mousemove", currentHandleMouseMove);
-    canvas.addEventListener("mouseleave", currentHandleMouseLeave);
-    window.addEventListener("resize", resizeCanvas);
+    canvas.addEventListener('mousemove', currentHandleMouseMove);
+    canvas.addEventListener('mouseleave', currentHandleMouseLeave);
+    window.addEventListener('resize', resizeCanvas);
 
     requestRef.current = requestAnimationFrame(updateAnimation);
 
@@ -201,9 +201,9 @@ const FluidGrid: React.FC<Props> = ({
         requestRef.current = null;
       }
 
-      canvas.removeEventListener("mousemove", currentHandleMouseMove);
-      canvas.removeEventListener("mouseleave", currentHandleMouseLeave);
-      window.removeEventListener("resize", resizeCanvas);
+      canvas.removeEventListener('mousemove', currentHandleMouseMove);
+      canvas.removeEventListener('mouseleave', currentHandleMouseLeave);
+      window.removeEventListener('resize', resizeCanvas);
     };
   }, [resizeCanvas, updateAnimation]);
 
@@ -214,8 +214,8 @@ const FluidGrid: React.FC<Props> = ({
   }, [direction, speed, borderColor, hoverFillColor, squareSize, initializeCanvas]); // Dependencies drive re-initialization
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-50 h-full w-full">
-      <canvas ref={canvasRef} className="block h-full w-full border-none" />
+    <div className='pointer-events-none fixed inset-0 z-50 h-full w-full'>
+      <canvas ref={canvasRef} className='block h-full w-full border-none' />
     </div>
   );
 };

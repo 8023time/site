@@ -1,23 +1,23 @@
-const namespace = process.env.CM_NAMESPACE || "cm";
+const namespace = process.env.CM_NAMESPACE || 'cm';
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/App.tsx",
-    "./src/components/**/*.{js,jsx,ts,tsx}",
-    "./src/generated/**/*.{js,jsx,ts,tsx}",
-    "./src/layout/**/*.{js,jsx,ts,tsx}",
-    "./src/pages/**/*.{js,jsx,ts,tsx}",
-    "./src/common/**/*.{js,jsx,ts,tsx}",
+    './index.html',
+    './src/App.tsx',
+    './src/components/**/*.{js,jsx,ts,tsx}',
+    './src/generated/**/*.{js,jsx,ts,tsx}',
+    './src/layout/**/*.{js,jsx,ts,tsx}',
+    './src/pages/**/*.{js,jsx,ts,tsx}',
+    './src/common/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     screens: {
-      sm: "640px", // 手机
-      md: "768px", // 平板
-      lg: "1024px", // 宽屏
-      xl: "1280px", // 超宽屏
-      "2xl": "1536px", // 特大屏
+      sm: '640px', // 手机
+      md: '768px', // 平板
+      lg: '1024px', // 宽屏
+      xl: '1280px', // 超宽屏
+      '2xl': '1536px', // 特大屏
     },
     extend: {
       colors: {
@@ -119,7 +119,7 @@ export default {
         border: {
           DEFAULT: `var(--${namespace}-border-color)`,
           dashed: `var(--${namespace}-border-dashed-color)`,
-          "root-card": `var(--${namespace}-root-card-border-color)`,
+          'root-card': `var(--${namespace}-root-card-border-color)`,
         },
       },
       boxShadow: {
@@ -127,7 +127,7 @@ export default {
         sm: `var(--${namespace}-box-shadow-sm)`,
         md: `var(--${namespace}-box-shadow-md)`,
         lg: `var(--${namespace}-box-shadow-lg)`,
-        "root-card": `var(--${namespace}-root-card-box-shadow)`,
+        'root-card': `var(--${namespace}-root-card-box-shadow)`,
       },
     },
   },

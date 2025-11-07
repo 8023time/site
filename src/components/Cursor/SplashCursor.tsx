@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 interface ColorRGB {
   r: number;
@@ -110,28 +110,28 @@ export default function SplashCursor({
         preserveDrawingBuffer: false,
       };
 
-      let gl = canvas.getContext("webgl2", params) as WebGL2RenderingContext | null;
+      let gl = canvas.getContext('webgl2', params) as WebGL2RenderingContext | null;
 
       if (!gl) {
-        gl = (canvas.getContext("webgl", params) ||
-          canvas.getContext("experimental-webgl", params)) as WebGL2RenderingContext | null;
+        gl = (canvas.getContext('webgl', params) ||
+          canvas.getContext('experimental-webgl', params)) as WebGL2RenderingContext | null;
       }
 
       if (!gl) {
-        throw new Error("Unable to initialize WebGL.");
+        throw new Error('Unable to initialize WebGL.');
       }
 
-      const isWebGL2 = "drawBuffers" in gl;
+      const isWebGL2 = 'drawBuffers' in gl;
 
       let supportLinearFiltering = false;
       let halfFloat = null;
 
       if (isWebGL2) {
-        (gl as WebGL2RenderingContext).getExtension("EXT_color_buffer_float");
-        supportLinearFiltering = !!(gl as WebGL2RenderingContext).getExtension("OES_texture_float_linear");
+        (gl as WebGL2RenderingContext).getExtension('EXT_color_buffer_float');
+        supportLinearFiltering = !!(gl as WebGL2RenderingContext).getExtension('OES_texture_float_linear');
       } else {
-        halfFloat = gl.getExtension("OES_texture_half_float");
-        supportLinearFiltering = !!gl.getExtension("OES_texture_half_float_linear");
+        halfFloat = gl.getExtension('OES_texture_half_float');
+        supportLinearFiltering = !!gl.getExtension('OES_texture_half_float_linear');
       }
 
       gl.clearColor(0, 0, 0, 1);
@@ -150,13 +150,13 @@ export default function SplashCursor({
           gl,
           (gl as WebGL2RenderingContext).RG16F,
           (gl as WebGL2RenderingContext).RG,
-          halfFloatTexType
+          halfFloatTexType,
         );
         formatR = getSupportedFormat(
           gl,
           (gl as WebGL2RenderingContext).R16F,
           (gl as WebGL2RenderingContext).RED,
-          halfFloatTexType
+          halfFloatTexType,
         );
       } else {
         formatRGBA = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
@@ -180,10 +180,10 @@ export default function SplashCursor({
       gl: WebGLRenderingContext | WebGL2RenderingContext,
       internalFormat: number,
       format: number,
-      type: number
+      type: number,
     ): { internalFormat: number; format: number } | null {
       if (!supportRenderTextureFormat(gl, internalFormat, format, type)) {
-        if ("drawBuffers" in gl) {
+        if ('drawBuffers' in gl) {
           const gl2 = gl as WebGL2RenderingContext;
           switch (internalFormat) {
             case gl2.R16F:
@@ -203,7 +203,7 @@ export default function SplashCursor({
       gl: WebGLRenderingContext | WebGL2RenderingContext,
       internalFormat: number,
       format: number,
-      type: number
+      type: number,
     ) {
       const texture = gl.createTexture();
       if (!texture) return false;
@@ -236,7 +236,7 @@ export default function SplashCursor({
 
     function addKeywords(source: string, keywords: string[] | null) {
       if (!keywords) return source;
-      let keywordsString = "";
+      let keywordsString = '';
       for (const keyword of keywords) {
         keywordsString += `#define ${keyword}\n`;
       }
@@ -354,7 +354,7 @@ export default function SplashCursor({
         vB = vUv - vec2(0.0, texelSize.y);
         gl_Position = vec4(aPosition, 0.0, 1.0);
       }
-    `
+    `,
     );
 
     const copyShader = compileShader(
@@ -368,7 +368,7 @@ export default function SplashCursor({
       void main () {
           gl_FragColor = texture2D(uTexture, vUv);
       }
-    `
+    `,
     );
 
     const clearShader = compileShader(
@@ -383,7 +383,7 @@ export default function SplashCursor({
       void main () {
           gl_FragColor = value * texture2D(uTexture, vUv);
       }
-    `
+    `,
     );
 
     const displayShaderSource = `
@@ -446,7 +446,7 @@ export default function SplashCursor({
           vec3 base = texture2D(uTarget, vUv).xyz;
           gl_FragColor = vec4(base + splat, 1.0);
       }
-    `
+    `,
     );
 
     const advectionShader = compileShader(
@@ -487,7 +487,7 @@ export default function SplashCursor({
           gl_FragColor = result / decay;
       }
     `,
-      ext.supportLinearFiltering ? null : ["MANUAL_FILTERING"]
+      ext.supportLinearFiltering ? null : ['MANUAL_FILTERING'],
     );
 
     const divergenceShader = compileShader(
@@ -517,7 +517,7 @@ export default function SplashCursor({
           float div = 0.5 * (R - L + T - B);
           gl_FragColor = vec4(div, 0.0, 0.0, 1.0);
       }
-    `
+    `,
     );
 
     const curlShader = compileShader(
@@ -540,7 +540,7 @@ export default function SplashCursor({
           float vorticity = R - L - T + B;
           gl_FragColor = vec4(0.5 * vorticity, 0.0, 0.0, 1.0);
       }
-    `
+    `,
     );
 
     const vorticityShader = compileShader(
@@ -575,7 +575,7 @@ export default function SplashCursor({
           velocity = min(max(velocity, -1000.0), 1000.0);
           gl_FragColor = vec4(velocity, 0.0, 1.0);
       }
-    `
+    `,
     );
 
     const pressureShader = compileShader(
@@ -601,7 +601,7 @@ export default function SplashCursor({
           float pressure = (L + R + B + T - divergence) * 0.25;
           gl_FragColor = vec4(pressure, 0.0, 0.0, 1.0);
       }
-    `
+    `,
     );
 
     const gradientSubtractShader = compileShader(
@@ -626,7 +626,7 @@ export default function SplashCursor({
           velocity.xy -= vec2(R - L, T - B);
           gl_FragColor = vec4(velocity, 0.0, 1.0);
       }
-    `
+    `,
     );
 
     const blit = (() => {
@@ -732,7 +732,7 @@ export default function SplashCursor({
       internalFormat: number,
       format: number,
       type: number,
-      param: number
+      param: number,
     ): DoubleFBO {
       const fbo1 = createFBO(w, h, internalFormat, format, type, param);
       const fbo2 = createFBO(w, h, internalFormat, format, type, param);
@@ -758,7 +758,7 @@ export default function SplashCursor({
       internalFormat: number,
       format: number,
       type: number,
-      param: number
+      param: number,
     ) {
       const newFBO = createFBO(w, h, internalFormat, format, type, param);
       copyProgram.bind();
@@ -774,7 +774,7 @@ export default function SplashCursor({
       internalFormat: number,
       format: number,
       type: number,
-      param: number
+      param: number,
     ) {
       if (target.width === w && target.height === h) return target;
       target.read = resizeFBO(target.read, w, h, internalFormat, format, type, param);
@@ -813,7 +813,7 @@ export default function SplashCursor({
           rg.internalFormat,
           rg.format,
           texType,
-          filtering
+          filtering,
         );
       }
 
@@ -824,7 +824,7 @@ export default function SplashCursor({
 
     function updateKeywords() {
       const displayKeywords: string[] = [];
-      if (config.SHADING) displayKeywords.push("SHADING");
+      if (config.SHADING) displayKeywords.push('SHADING');
       displayMaterial.setKeywords(displayKeywords);
     }
 
@@ -885,7 +885,7 @@ export default function SplashCursor({
       colorUpdateTimer += dt * config.COLOR_UPDATE_SPEED;
       if (colorUpdateTimer >= 1) {
         colorUpdateTimer = wrap(colorUpdateTimer, 0, 1);
-        pointers.forEach(p => {
+        pointers.forEach((p) => {
           p.color = generateColor();
         });
       }
@@ -1187,7 +1187,7 @@ export default function SplashCursor({
       return ((value - min) % range) + min;
     }
 
-    window.addEventListener("mousedown", e => {
+    window.addEventListener('mousedown', (e) => {
       const pointer = pointers[0];
       const posX = scaleByPixelRatio(e.clientX);
       const posY = scaleByPixelRatio(e.clientY);
@@ -1202,11 +1202,11 @@ export default function SplashCursor({
       const color = generateColor();
       updateFrame();
       updatePointerMoveData(pointer, posX, posY, color);
-      document.body.removeEventListener("mousemove", handleFirstMouseMove);
+      document.body.removeEventListener('mousemove', handleFirstMouseMove);
     }
-    document.body.addEventListener("mousemove", handleFirstMouseMove);
+    document.body.addEventListener('mousemove', handleFirstMouseMove);
 
-    window.addEventListener("mousemove", e => {
+    window.addEventListener('mousemove', (e) => {
       const pointer = pointers[0];
       const posX = scaleByPixelRatio(e.clientX);
       const posY = scaleByPixelRatio(e.clientY);
@@ -1223,13 +1223,13 @@ export default function SplashCursor({
         updateFrame();
         updatePointerDownData(pointer, touches[i].identifier, posX, posY);
       }
-      document.body.removeEventListener("touchstart", handleFirstTouchStart);
+      document.body.removeEventListener('touchstart', handleFirstTouchStart);
     }
-    document.body.addEventListener("touchstart", handleFirstTouchStart);
+    document.body.addEventListener('touchstart', handleFirstTouchStart);
 
     window.addEventListener(
-      "touchstart",
-      e => {
+      'touchstart',
+      (e) => {
         const touches = e.targetTouches;
         const pointer = pointers[0];
         for (let i = 0; i < touches.length; i++) {
@@ -1238,12 +1238,12 @@ export default function SplashCursor({
           updatePointerDownData(pointer, touches[i].identifier, posX, posY);
         }
       },
-      false
+      false,
     );
 
     window.addEventListener(
-      "touchmove",
-      e => {
+      'touchmove',
+      (e) => {
         const touches = e.targetTouches;
         const pointer = pointers[0];
         for (let i = 0; i < touches.length; i++) {
@@ -1252,10 +1252,10 @@ export default function SplashCursor({
           updatePointerMoveData(pointer, posX, posY, pointer.color);
         }
       },
-      false
+      false,
     );
 
-    window.addEventListener("touchend", e => {
+    window.addEventListener('touchend', (e) => {
       const touches = e.changedTouches;
       const pointer = pointers[0];
       for (let i = 0; i < touches.length; i++) {
@@ -1280,8 +1280,8 @@ export default function SplashCursor({
   ]);
 
   return (
-    <div className="pointer-events-none fixed top-0 left-0 z-50 h-full w-full">
-      <canvas ref={canvasRef} id="fluid" className="block h-screen w-screen"></canvas>
+    <div className='pointer-events-none fixed top-0 left-0 z-50 h-full w-full'>
+      <canvas ref={canvasRef} id='fluid' className='block h-screen w-screen'></canvas>
     </div>
   );
 }

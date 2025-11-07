@@ -1,5 +1,5 @@
-@use "../../mixins//namespace.scss" as *;
-@use "../../mixins/color-variants" as *;
+@use '../../mixins//namespace.scss' as *;
+@use '../../mixins/color-variants' as *;
 
 // 深蓝深色模式主题变量
 :root.dark-blue {
@@ -8,15 +8,15 @@
   --#{$cm-namespace}-bg-color-page: #121520;
 
   // === 功能色 ===
-  @include generate-color-variants("primary", #4a8fe1, true);
-  @include generate-color-variants("success", #2ecc71, true);
-  @include generate-color-variants("warning", #f1c40f, true);
-  @include generate-color-variants("danger", #e74c3c, true);
-  @include generate-color-variants("error", #f39c12, true);
+  @include generate-color-variants('primary', #4a8fe1, true);
+  @include generate-color-variants('success', #2ecc71, true);
+  @include generate-color-variants('warning', #f1c40f, true);
+  @include generate-color-variants('danger', #e74c3c, true);
+  @include generate-color-variants('error', #f39c12, true);
 
   // === 次级色 ===
-  @include generate-color-variants("info", #a3adbb, true);
-  @include generate-color-variants("secondary", #7a8296, true);
+  @include generate-color-variants('info', #a3adbb, true);
+  @include generate-color-variants('secondary', #7a8296, true);
 
   // === 背景色 ===
   --#{$cm-namespace}-bg-primary: #12182f;

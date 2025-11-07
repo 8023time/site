@@ -1,16 +1,16 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 /**
  * @description: 标签颜色
  * @version: 1.0.0
  */
-export type TagColor = "blue" | "green" | "red" | "yellow" | "purple" | "gray" | "indigo";
+export type TagColor = 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'gray' | 'indigo';
 
 /**
  * @description：标签尺寸
  * @version: 1.0.0
  */
-export type TagSize = "xs" | "sm" | "md";
+export type TagSize = 'xs' | 'sm' | 'md';
 
 /**
  * @description: 标签props
@@ -78,12 +78,12 @@ export interface TagProps {
  * @version: 1.0.0
  */
 export const defaultTagProps: TagProps = {
-  children: "",
-  color: "gray",
-  size: "sm",
+  children: '',
+  color: 'gray',
+  size: 'sm',
   removable: false,
   onRemove: undefined,
   onClick: undefined,
   disabled: false,
-  className: "",
+  className: '',
 };

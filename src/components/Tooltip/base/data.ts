@@ -1,23 +1,23 @@
-import React from "react";
-import type { ReactNode } from "react";
+import React from 'react';
+import type { ReactNode } from 'react';
 
 /**
  * @description: Tooltip组件位置类型定义
  * @version: 1.0.0
  */
 export type Placement =
-  | "top"
-  | "top-start"
-  | "top-end"
-  | "bottom"
-  | "bottom-start"
-  | "bottom-end"
-  | "left"
-  | "left-start"
-  | "left-end"
-  | "right"
-  | "right-start"
-  | "right-end";
+  | 'top'
+  | 'top-start'
+  | 'top-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'bottom-end'
+  | 'left'
+  | 'left-start'
+  | 'left-end'
+  | 'right'
+  | 'right-start'
+  | 'right-end';
 
 /**
  * @description: Tooltip组件props类型定义
@@ -73,10 +73,10 @@ export interface TooltipProps {
  * @version: 1.0.0
  */
 export const defaultTooltipProps = {
-  content: "",
-  placement: "top",
+  content: '',
+  placement: 'top',
   enterDelay: 100,
   leaveDelay: 300,
-  className: "",
+  className: '',
   arrow: true,
-} satisfies Partial<Omit<TooltipProps, "children">>;
+} satisfies Partial<Omit<TooltipProps, 'children'>>;

@@ -110,5 +110,5 @@ description: 测试 rehypeTailwindInjector + Tailwind 样式映射在所有 Mark
 function greet(name) {
   console.log(`Hello, ${name}!`);
 }
-greet("8023time");
+greet('8023time');
 ```

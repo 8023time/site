@@ -2,18 +2,18 @@
  * @description 按钮类型
  * @version 1.0.0
  */
-export type ButtonVariant = "solid" | "outlined" | "filled" | "text" | "link";
+export type ButtonVariant = 'solid' | 'outlined' | 'filled' | 'text' | 'link';
 
 /**
  * @description 按钮颜色
  * @version 1.0.0
  */
-export type ButtonColor = "primary" | "danger" | "warning" | "info";
+export type ButtonColor = 'primary' | 'danger' | 'warning' | 'info';
 
 /**
  * @description 按钮尺寸
  */
-export type ButtonSize = "small" | "medium" | "large";
+export type ButtonSize = 'small' | 'medium' | 'large';
 
 /**
  * @description 按钮
@@ -63,10 +63,10 @@ export interface ButtonProps {
  * @version: 1.0.0
  */
 export const defaultButtonProps: ButtonProps = {
-  variant: "solid",
-  color: "info",
-  size: "medium",
+  variant: 'solid',
+  color: 'info',
+  size: 'medium',
   onClick: () => {},
-  className: "",
-  children: "",
+  className: '',
+  children: '',
 };

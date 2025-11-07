@@ -1,8 +1,8 @@
-@use "sass:color";
-@use "sass:math";
-@use "sass:map";
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:map';
 
-@use "./namespace" as *;
+@use './namespace' as *;
 
 // ===== 颜色变量生成器 =====
 @mixin generate-color-variants($name, $base-color, $is-dark: false) {
@@ -29,9 +29,9 @@
 
 // 生成悬停色
 @function generate-hover-color($base-color, $is-dark: false) {
-  $h: color.channel($base-color, "hue", $space: hsl);
-  $s: color.channel($base-color, "saturation", $space: hsl);
-  $l: color.channel($base-color, "lightness", $space: hsl);
+  $h: color.channel($base-color, 'hue', $space: hsl);
+  $s: color.channel($base-color, 'saturation', $space: hsl);
+  $l: color.channel($base-color, 'lightness', $space: hsl);
 
   @if $is-dark {
     // 暗色模式
@@ -50,9 +50,9 @@
 
 // 生成柔和色
 @function generate-muted-color($base-color, $is-dark: false) {
-  $h: color.channel($base-color, "hue", $space: hsl);
-  $s: color.channel($base-color, "saturation", $space: hsl);
-  $l: color.channel($base-color, "lightness", $space: hsl);
+  $h: color.channel($base-color, 'hue', $space: hsl);
+  $s: color.channel($base-color, 'saturation', $space: hsl);
+  $l: color.channel($base-color, 'lightness', $space: hsl);
 
   // 适度降低饱和度
   $new-s: math.max($s - 30%, 0%);
@@ -72,9 +72,9 @@
 
 // 生成深色
 @function generate-deep-color($base-color, $is-dark: false) {
-  $h: color.channel($base-color, "hue", $space: hsl);
-  $s: color.channel($base-color, "saturation", $space: hsl);
-  $l: color.channel($base-color, "lightness", $space: hsl);
+  $h: color.channel($base-color, 'hue', $space: hsl);
+  $s: color.channel($base-color, 'saturation', $space: hsl);
+  $l: color.channel($base-color, 'lightness', $space: hsl);
 
   @if $is-dark {
     // 暗色模式
@@ -93,9 +93,9 @@
 
 // 生成浅色
 @function generate-light-color($base-color, $is-dark: false) {
-  $h: color.channel($base-color, "hue", $space: hsl);
-  $s: color.channel($base-color, "saturation", $space: hsl);
-  $l: color.channel($base-color, "lightness", $space: hsl);
+  $h: color.channel($base-color, 'hue', $space: hsl);
+  $s: color.channel($base-color, 'saturation', $space: hsl);
+  $l: color.channel($base-color, 'lightness', $space: hsl);
 
   @if $is-dark {
     // 暗色模式
@@ -114,9 +114,9 @@
 
 // 转换为 RGB 格式
 @function color-to-rgb($color) {
-  $r: math.round(color.channel($color, "red", $space: rgb));
-  $g: math.round(color.channel($color, "green", $space: rgb));
-  $b: math.round(color.channel($color, "blue", $space: rgb));
+  $r: math.round(color.channel($color, 'red', $space: rgb));
+  $g: math.round(color.channel($color, 'green', $space: rgb));
+  $b: math.round(color.channel($color, 'blue', $space: rgb));
 
   @return #{$r}, #{$g}, #{$b};
 }

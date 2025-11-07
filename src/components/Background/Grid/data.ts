@@ -3,9 +3,9 @@
  * @version: 1.0.0
  */
 export const defaultProps = {
-  direction: "right",
+  direction: 'right',
   speed: 1,
-  borderColor: "#999",
+  borderColor: '#999',
   squareSize: 40,
-  hoverFillColor: "#222",
+  hoverFillColor: '#222',
 };

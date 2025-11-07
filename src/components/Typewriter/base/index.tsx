@@ -1,6 +1,6 @@
-import type { TypewriterProps } from "./type";
-import React, { useState, useEffect, useRef } from "react";
-import { defaultTypewriterProps, gradientColors } from "./data";
+import type { TypewriterProps } from './type';
+import React, { useState, useEffect, useRef } from 'react';
+import { defaultTypewriterProps, gradientColors } from './data';
 
 const Typewriter: React.FC<TypewriterProps> = ({
   texts = defaultTypewriterProps.texts,
@@ -16,7 +16,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
   maskColor = defaultTypewriterProps.maskColor,
   textSize = defaultTypewriterProps.textSize,
 }) => {
-  const [displayedText, setDisplayedText] = useState("");
+  const [displayedText, setDisplayedText] = useState('');
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -43,7 +43,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
           setDisplayedText(displayedText.slice(0, -1));
         } else {
           setIsDeleting(false);
-          setCurrentTextIndex(prev => (prev + 1) % texts.length);
+          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
         }
       }
     }, speed);
@@ -54,18 +54,18 @@ const Typewriter: React.FC<TypewriterProps> = ({
   }, [displayedText, currentTextIndex, isDeleting, texts, typingSpeed, deleteSpeed, pauseTime, loop]);
 
   useEffect(() => {
-    setDisplayedText("");
+    setDisplayedText('');
     setCurrentTextIndex(0);
     setIsDeleting(false);
   }, [texts]);
 
   const gradientStyle =
-    textColor === "auto"
+    textColor === 'auto'
       ? {
-          background: `linear-gradient(90deg, ${gradientColors.join(", ")})`,
-          WebkitBackgroundClip: "text",
-          backgroundClip: "text",
-          color: "transparent",
+          background: `linear-gradient(90deg, ${gradientColors.join(', ')})`,
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          color: 'transparent',
           fallbackColor: gradientColors[0],
         }
       : { color: textColor };
@@ -73,15 +73,15 @@ const Typewriter: React.FC<TypewriterProps> = ({
   return (
     <div className={`inline-block ${className}`}>
       <span
-        className="inline-block overflow-hidden p-3 align-middle text-4xl whitespace-pre-wrap"
-        style={{ position: "relative", ...gradientStyle, fontSize: textSize }}
+        className='inline-block overflow-hidden p-3 align-middle text-4xl whitespace-pre-wrap'
+        style={{ position: 'relative', ...gradientStyle, fontSize: textSize }}
       >
         <span
           style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.35rem",
-            verticalAlign: "middle",
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.35rem',
+            verticalAlign: 'middle',
           }}
         >
           {displayedText}
@@ -89,14 +89,14 @@ const Typewriter: React.FC<TypewriterProps> = ({
           {/* 光标*/}
           {cursor && (
             <span
-              className="animate-blink"
+              className='animate-blink'
               style={{
-                display: "inline-block",
-                width: "2px",
-                height: "1em",
-                borderRadius: "1px",
+                display: 'inline-block',
+                width: '2px',
+                height: '1em',
+                borderRadius: '1px',
                 backgroundColor: cursorColor,
-                verticalAlign: "middle",
+                verticalAlign: 'middle',
               }}
             />
           )}
@@ -105,7 +105,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
         {/* 遮罩层 */}
         {mask && (
           <span
-            className="animate-mask absolute inset-0 rounded-2xl"
+            className='animate-mask absolute inset-0 rounded-2xl'
             style={{
               background: maskColor,
               opacity: 0.5,

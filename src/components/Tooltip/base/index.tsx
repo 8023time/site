@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
-import type { TooltipProps, Placement } from "./data";
-import { defaultTooltipProps } from "./data";
-import { createPortal } from "react-dom";
-import type { ReactNode } from "react";
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import type { TooltipProps, Placement } from './data';
+import { defaultTooltipProps } from './data';
+import { createPortal } from 'react-dom';
+import type { ReactNode } from 'react';
 
 // 全局单例管理（保持不变）
 let currentTooltip: { forceHide: () => void } | null = null;
@@ -25,22 +25,22 @@ interface TooltipStyles {
 }
 const TOOLTIP_STYLES: TooltipStyles = {
   light: {
-    backgroundColor: "#ffffff",
-    color: "#1f2937",
-    boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)",
-    border: "1px solid rgba(0,0,0,0.08)",
+    backgroundColor: '#ffffff',
+    color: '#1f2937',
+    boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)',
+    border: '1px solid rgba(0,0,0,0.08)',
   },
   dark: {
-    backgroundColor: "#1f2937",
-    color: "#f3f4f6",
-    boxShadow: "0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -2px rgba(0,0,0,0.2)",
+    backgroundColor: '#1f2937',
+    color: '#f3f4f6',
+    boxShadow: '0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -2px rgba(0,0,0,0.2)',
   },
 };
 
 const Tooltip: React.FC<
   TooltipProps & {
     children: ReactNode;
-    theme?: "light" | "dark";
+    theme?: 'light' | 'dark';
     arrowSize?: number;
   }
 > = ({
@@ -48,9 +48,9 @@ const Tooltip: React.FC<
   placement = defaultTooltipProps.placement,
   enterDelay = defaultTooltipProps.enterDelay,
   leaveDelay = defaultTooltipProps.leaveDelay,
-  className = "",
+  className = '',
   arrow = defaultTooltipProps.arrow,
-  theme = "light",
+  theme = 'light',
   arrowSize = 6,
   children,
 }) => {
@@ -69,7 +69,7 @@ const Tooltip: React.FC<
     forceHide: () => {},
   });
 
-  const isDark = theme === "dark";
+  const isDark = theme === 'dark';
 
   // 实际的强制隐藏逻辑
   const forceHide = useCallback(() => {
@@ -105,14 +105,14 @@ const Tooltip: React.FC<
       right: viewport.width - trigger.right,
     };
 
-    if (placement.startsWith("top") && space.top < tooltip.height + gap) {
-      newPlacement = placement.replace("top", "bottom") as Placement;
-    } else if (placement.startsWith("bottom") && space.bottom < tooltip.height + gap) {
-      newPlacement = placement.replace("bottom", "top") as Placement;
-    } else if (placement.startsWith("left") && space.left < tooltip.width + gap) {
-      newPlacement = placement.replace("left", "right") as Placement;
-    } else if (placement.startsWith("right") && space.right < tooltip.width + gap) {
-      newPlacement = placement.replace("right", "left") as Placement;
+    if (placement.startsWith('top') && space.top < tooltip.height + gap) {
+      newPlacement = placement.replace('top', 'bottom') as Placement;
+    } else if (placement.startsWith('bottom') && space.bottom < tooltip.height + gap) {
+      newPlacement = placement.replace('bottom', 'top') as Placement;
+    } else if (placement.startsWith('left') && space.left < tooltip.width + gap) {
+      newPlacement = placement.replace('left', 'right') as Placement;
+    } else if (placement.startsWith('right') && space.right < tooltip.width + gap) {
+      newPlacement = placement.replace('right', 'left') as Placement;
     }
 
     setActualPlacement(newPlacement);
@@ -123,23 +123,23 @@ const Tooltip: React.FC<
     let left = 0;
 
     switch (newPlacement) {
-      case "top":
-      case "top-start":
-      case "top-end":
+      case 'top':
+      case 'top-start':
+      case 'top-end':
         top = trigger.top - tooltip.height - gap;
         left = midX - tooltip.width / 2;
         break;
-      case "bottom":
-      case "bottom-start":
-      case "bottom-end":
+      case 'bottom':
+      case 'bottom-start':
+      case 'bottom-end':
         top = trigger.bottom + gap;
         left = midX - tooltip.width / 2;
         break;
-      case "left":
+      case 'left':
         top = midY - tooltip.height / 2;
         left = trigger.left - tooltip.width - gap;
         break;
-      case "right":
+      case 'right':
         top = midY - tooltip.height / 2;
         left = trigger.right + gap;
         break;
@@ -202,12 +202,12 @@ const Tooltip: React.FC<
       rafRef.current = requestAnimationFrame(calculatePosition);
     };
 
-    window.addEventListener("resize", handler);
-    window.addEventListener("scroll", handler, true);
+    window.addEventListener('resize', handler);
+    window.addEventListener('scroll', handler, true);
 
     return () => {
-      window.removeEventListener("resize", handler);
-      window.removeEventListener("scroll", handler, true);
+      window.removeEventListener('resize', handler);
+      window.removeEventListener('scroll', handler, true);
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
         rafRef.current = null;
@@ -241,24 +241,24 @@ const Tooltip: React.FC<
   const tooltipElement = isVisible ? (
     <div
       ref={tooltipRef}
-      role="tooltip"
+      role='tooltip'
       style={{
-        position: "fixed",
+        position: 'fixed',
         top: `${coords.top}px`,
         left: `${coords.left}px`,
         opacity: isVisible ? 1 : 0,
-        transition: "opacity 0.2s ease-in-out, transform 120ms ease",
-        pointerEvents: "none",
+        transition: 'opacity 0.2s ease-in-out, transform 120ms ease',
+        pointerEvents: 'none',
         zIndex: 9999,
-        fontSize: "0.875rem",
-        lineHeight: "1.25rem",
+        fontSize: '0.875rem',
+        lineHeight: '1.25rem',
         fontWeight: 500,
-        borderRadius: "0.5rem",
-        padding: "0.5rem 0.75rem",
-        maxWidth: "280px",
-        whiteSpace: "normal",
-        wordBreak: "break-word",
-        ...TOOLTIP_STYLES[isDark ? "dark" : "light"],
+        borderRadius: '0.5rem',
+        padding: '0.5rem 0.75rem',
+        maxWidth: '280px',
+        whiteSpace: 'normal',
+        wordBreak: 'break-word',
+        ...TOOLTIP_STYLES[isDark ? 'dark' : 'light'],
       }}
       className={className}
     >
@@ -267,37 +267,37 @@ const Tooltip: React.FC<
       {arrow && (
         <div
           style={{
-            position: "absolute",
+            position: 'absolute',
             width: 0,
             height: 0,
-            borderStyle: "solid",
-            ...(actualPlacement.startsWith("top") && {
+            borderStyle: 'solid',
+            ...(actualPlacement.startsWith('top') && {
               bottom: -arrowSize,
               left: arrowOffset,
               borderWidth: `${arrowSize}px ${arrowSize}px 0 ${arrowSize}px`,
-              borderColor: `${isDark ? "#1f2937" : "#ffffff"} transparent transparent transparent`,
-              filter: "drop-shadow(0 2px 2px rgba(0,0,0,0.08))",
+              borderColor: `${isDark ? '#1f2937' : '#ffffff'} transparent transparent transparent`,
+              filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.08))',
             }),
-            ...(actualPlacement.startsWith("bottom") && {
+            ...(actualPlacement.startsWith('bottom') && {
               top: -arrowSize,
               left: arrowOffset,
               borderWidth: `0 ${arrowSize}px ${arrowSize}px ${arrowSize}px`,
-              borderColor: `transparent transparent ${isDark ? "#1f2937" : "#ffffff"} transparent`,
-              filter: "drop-shadow(0 -2px 2px rgba(0,0,0,0.08))",
+              borderColor: `transparent transparent ${isDark ? '#1f2937' : '#ffffff'} transparent`,
+              filter: 'drop-shadow(0 -2px 2px rgba(0,0,0,0.08))',
             }),
-            ...(actualPlacement.startsWith("left") && {
+            ...(actualPlacement.startsWith('left') && {
               right: -arrowSize,
               top: arrowOffset,
               borderWidth: `${arrowSize}px 0 ${arrowSize}px ${arrowSize}px`,
-              borderColor: `transparent transparent transparent ${isDark ? "#1f2937" : "#ffffff"}`,
-              filter: "drop-shadow(2px 0 2px rgba(0,0,0,0.08))",
+              borderColor: `transparent transparent transparent ${isDark ? '#1f2937' : '#ffffff'}`,
+              filter: 'drop-shadow(2px 0 2px rgba(0,0,0,0.08))',
             }),
-            ...(actualPlacement.startsWith("right") && {
+            ...(actualPlacement.startsWith('right') && {
               left: -arrowSize,
               top: arrowOffset,
               borderWidth: `${arrowSize}px ${arrowSize}px ${arrowSize}px 0`,
-              borderColor: `transparent ${isDark ? "#1f2937" : "#ffffff"} transparent transparent`,
-              filter: "drop-shadow(-2px 0 2px rgba(0,0,0,0.08))",
+              borderColor: `transparent ${isDark ? '#1f2937' : '#ffffff'} transparent transparent`,
+              filter: 'drop-shadow(-2px 0 2px rgba(0,0,0,0.08))',
             }),
           }}
         />
@@ -309,8 +309,8 @@ const Tooltip: React.FC<
     <>
       <div
         ref={wrapperRef}
-        className="inline-block"
-        style={{ position: "relative" }}
+        className='inline-block'
+        style={{ position: 'relative' }}
         onMouseEnter={show}
         onMouseLeave={delayedHide}
         onFocus={show}

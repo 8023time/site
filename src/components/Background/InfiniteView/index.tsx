@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 interface InfiniteViewProps {
   src: string[];
   interval?: number;
-  direction?: "up" | "down";
+  direction?: 'up' | 'down';
   className?: string;
 }
 
-export default function InfiniteView({ src, interval = 10000, direction = "up", className = "" }: InfiniteViewProps) {
+export default function InfiniteView({ src, interval = 10000, direction = 'up', className = '' }: InfiniteViewProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState<number | null>(null);
   const [animating, setAnimating] = useState(false);
@@ -20,21 +20,21 @@ export default function InfiniteView({ src, interval = 10000, direction = "up", 
     return () => clearInterval(timer);
   }, [animating, currentIndex, direction, interval]);
 
-  function triggerScroll(dir: "up" | "down") {
+  function triggerScroll(dir: 'up' | 'down') {
     setAnimating(true);
     setNextIndex(
-      dir === "down"
+      dir === 'down'
         ? currentIndex === src.length - 1
           ? 0
           : currentIndex + 1
         : currentIndex === 0
           ? src.length - 1
-          : currentIndex - 1
+          : currentIndex - 1,
     );
 
     setTimeout(() => {
-      setCurrentIndex(prev =>
-        dir === "down" ? (prev === src.length - 1 ? 0 : prev + 1) : prev === 0 ? src.length - 1 : prev - 1
+      setCurrentIndex((prev) =>
+        dir === 'down' ? (prev === src.length - 1 ? 0 : prev + 1) : prev === 0 ? src.length - 1 : prev - 1,
       );
       setNextIndex(null);
       setAnimating(false);
@@ -44,11 +44,11 @@ export default function InfiniteView({ src, interval = 10000, direction = "up", 
   return (
     <div className={`absolute inset-0 z-[-1] h-full w-full ${className}`}>
       {/* 当前层 */}
-      <div className="absolute inset-0">
+      <div className='absolute inset-0'>
         <img
           src={src[currentIndex]}
-          alt="current"
-          className="h-full w-full object-fill transition-transform duration-1000"
+          alt='current'
+          className='h-full w-full object-fill transition-transform duration-1000'
         />
       </div>
 
@@ -56,10 +56,10 @@ export default function InfiniteView({ src, interval = 10000, direction = "up", 
       {nextIndex !== null && (
         <div
           className={`absolute inset-0 z-[-1] ${
-            direction === "up" ? "animate-scrollUp" : direction === "down" ? "animate-scrollDown" : ""
+            direction === 'up' ? 'animate-scrollUp' : direction === 'down' ? 'animate-scrollDown' : ''
           }`}
         >
-          <img src={src[nextIndex]} alt="transition" className="h-full w-full object-fill" />
+          <img src={src[nextIndex]} alt='transition' className='h-full w-full object-fill' />
         </div>
       )}
 

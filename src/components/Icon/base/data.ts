@@ -46,16 +46,16 @@ export type IconProps = {
  * @version: 1.0.0
  */
 export const defaultIconProps: IconProps = {
-  icon: "",
-  alt: "",
+  icon: '',
+  alt: '',
   size: 35,
   round: true,
-  className: "",
-  color: "",
+  className: '',
+  color: '',
 };
 
 /**
  * @description: 图标包装器属性（用于 createIcon 等二次封装，排除 icon）
  * @version: 1.0.0
  */
-export type IconWrapperProps = Omit<IconProps, "icon">;
+export type IconWrapperProps = Omit<IconProps, 'icon'>;

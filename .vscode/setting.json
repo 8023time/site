@@ -2,19 +2,9 @@
   "editor.fontSize": 16,
   "editor.formatOnType": true,
 
-  "editor.formatOnSave": true,
   "files.autoSave": "afterDelay",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  },
-
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/dist": true,
-    "**/build": true,
-    "node_modules": true,
-    "dist": true,
-    "**/.git": true
   },
 
   "files.watcherExclude": {
@@ -26,5 +16,48 @@
     "**/public/**": true
   },
 
-  "cSpell.words": ["node_modules", "dist", "build", "public"]
+  "cSpell.words": ["node_modules", "dist", "build", "public"],
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "dist": true,
+    "build": true,
+    "pnpm.lock": true,
+    "**/dist": true,
+    "**/build": true,
+    "node_modules": true,
+    "**/.git": true
+  },
+
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
