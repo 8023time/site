@@ -1,6 +1,5 @@
 # EditorConfig is awesome: https://EditorConfig.org
 
-# top-most EditorConfig file
 root = true
 
 [*] # 表示所有文件适用
