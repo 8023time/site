@@ -1,0 +1,30 @@
+{
+  "editor.fontSize": 16,
+  "editor.formatOnType": true,
+
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "node_modules": true,
+    "dist": true,
+    "**/.git": true
+  },
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/public/**": true
+  },
+
+  "cSpell.words": ["node_modules", "dist", "build", "public"]
+}

@@ -1,11 +1,11 @@
 /dist/*
-/html/*
-.local
+/build/*
+/public/*
 
+.local
 /node_modules/**
+
 **/*.svg
 **/*.sh
-
-/public/*
 
 src/generated/*
