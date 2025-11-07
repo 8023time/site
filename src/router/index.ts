@@ -1,11 +1,5 @@
-import StatisticsPage from "@pages/Statistics/index";
-import { createBrowserRouter } from "react-router";
-import SkillPage from "@pages/Skill/index";
-import HomePage from "@pages/Home/index";
-import TestPage from "@pages/Test/index";
-import NotFoundPage from "@pages/404/404";
-import SitePage from "@pages/Site/index";
 import Layout from "@layout/index";
+import { createBrowserRouter } from "react-router";
 
 const router = createBrowserRouter([
   {
@@ -14,27 +8,45 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        Component: HomePage,
+        lazy: async () => {
+          const { default: Component } = await import("@pages/Home/index");
+          return { Component };
+        },
       },
       {
         path: "/skill",
-        Component: SkillPage,
+        lazy: async () => {
+          const { default: Component } = await import("@pages/Skill/index");
+          return { Component };
+        },
       },
       {
         path: "/test",
-        Component: TestPage,
+        lazy: async () => {
+          const { default: Component } = await import("@pages/Test/index");
+          return { Component };
+        },
       },
       {
         path: "/site",
-        Component: SitePage,
+        lazy: async () => {
+          const { default: Component } = await import("@pages/Site/index");
+          return { Component };
+        },
       },
       {
         path: "/statistics",
-        Component: StatisticsPage,
+        lazy: async () => {
+          const { default: Component } = await import("@pages/Statistics/index");
+          return { Component };
+        },
       },
       {
         path: "*",
-        Component: NotFoundPage,
+        lazy: async () => {
+          const { default: Component } = await import("@pages/404/404");
+          return { Component };
+        },
       },
     ],
   },
