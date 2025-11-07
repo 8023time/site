@@ -3,9 +3,6 @@
   "editor.formatOnType": true,
 
   "files.autoSave": "afterDelay",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
 
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -59,5 +56,11 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
   }
 }
