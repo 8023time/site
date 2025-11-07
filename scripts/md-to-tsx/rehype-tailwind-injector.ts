@@ -1,8 +1,8 @@
 import { h } from "hastscript";
 import type { Root } from "hast";
 import { visit } from "unist-util-visit";
-import { cn } from "../../src/utils/className.ts";
-import { tailwindMap } from "../../src/theme/markdown-styles.ts";
+import { cn } from "@utils/className.ts";
+import { tailwindMap } from "@styles/markdown-styles.ts";
 
 /**
  * Rehype 插件：注入 Tailwind 样式（支持 main/dark，<pre> 特殊处理）。
