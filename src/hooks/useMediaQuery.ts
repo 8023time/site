@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 /**
  * Custom hook for responsive media queries
@@ -23,7 +23,7 @@ export function useMediaQuery(query: string): boolean {
     if (media.addListener) {
       media.addListener(listener);
     } else {
-      media.addEventListener('change', listener);
+      media.addEventListener("change", listener);
     }
 
     // Cleanup
@@ -31,7 +31,7 @@ export function useMediaQuery(query: string): boolean {
       if (media.removeListener) {
         media.removeListener(listener);
       } else {
-        media.removeEventListener('change', listener);
+        media.removeEventListener("change", listener);
       }
     };
   }, [query]);
@@ -43,15 +43,15 @@ export function useMediaQuery(query: string): boolean {
  * Preset breakpoint hooks
  */
 export function useIsMobile(): boolean {
-  return useMediaQuery('(max-width: 640px)');
+  return useMediaQuery("(max-width: 640px)");
 }
 
 export function useIsTablet(): boolean {
-  return useMediaQuery('(min-width: 641px) and (max-width: 1024px)');
+  return useMediaQuery("(min-width: 641px) and (max-width: 1024px)");
 }
 
 export function useIsDesktop(): boolean {
-  return useMediaQuery('(min-width: 1025px)');
+  return useMediaQuery("(min-width: 1025px)");
 }
 
 /**
@@ -62,10 +62,10 @@ export function useDeviceType() {
   const isTablet = useIsTablet();
   const isDesktop = useIsDesktop();
 
-  if (isMobile) return 'mobile';
-  if (isTablet) return 'tablet';
-  if (isDesktop) return 'desktop';
-  return 'desktop'; // fallback
+  if (isMobile) return "mobile";
+  if (isTablet) return "tablet";
+  if (isDesktop) return "desktop";
+  return "desktop"; // fallback
 }
 
 /**
@@ -73,8 +73,8 @@ export function useDeviceType() {
  */
 export function useViewportSize() {
   const [size, setSize] = useState({
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+    width: typeof window !== "undefined" ? window.innerWidth : 0,
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
   });
 
   useEffect(() => {
@@ -85,12 +85,12 @@ export function useViewportSize() {
       });
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Call handler right away so state gets updated with initial window size
     handleResize();
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return size;
@@ -100,22 +100,20 @@ export function useViewportSize() {
  * Orientation detection hook
  */
 export function useOrientation() {
-  const [orientation, setOrientation] = useState<'portrait' | 'landscape'>('portrait');
+  const [orientation, setOrientation] = useState<"portrait" | "landscape">("portrait");
 
   useEffect(() => {
     const updateOrientation = () => {
-      setOrientation(
-        window.innerHeight > window.innerWidth ? 'portrait' : 'landscape'
-      );
+      setOrientation(window.innerHeight > window.innerWidth ? "portrait" : "landscape");
     };
 
     updateOrientation();
-    window.addEventListener('resize', updateOrientation);
-    window.addEventListener('orientationchange', updateOrientation);
+    window.addEventListener("resize", updateOrientation);
+    window.addEventListener("orientationchange", updateOrientation);
 
     return () => {
-      window.removeEventListener('resize', updateOrientation);
-      window.removeEventListener('orientationchange', updateOrientation);
+      window.removeEventListener("resize", updateOrientation);
+      window.removeEventListener("orientationchange", updateOrientation);
     };
   }, []);
 

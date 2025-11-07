@@ -1,7 +1,7 @@
 # useImperativeHandle
 
-
 React 18 写法
+
 ```typescript
 import React from "react";
 import { useImperativeHandle } from "react";
@@ -43,9 +43,9 @@ const Father: React.FC = () => {
 export default Father;
 ```
 
-
 React 19 写法
->相较于 React 18 版本，React 19 版本中，把`React.forwardRef` 删除了，里面的 `ref` 直接归入到了props参数中。
+
+> 相较于 React 18 版本，React 19 版本中，把`React.forwardRef` 删除了，里面的 `ref` 直接归入到了props参数中。
 
 ```typescript
 import React from "react";
