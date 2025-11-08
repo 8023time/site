@@ -3,6 +3,6 @@ export default {
   '!(package)*.json': ['prettier --write'],
   'package.json': ['prettier --write'],
   '*.{tsx,ts,jsx,js}': ['prettier --write'],
-  '*.{css,scss,postcss,less}': ['stylelint --fix', 'prettier --write'],
+  '*.{css,scss,postcss,less}': ['prettier --write'],
   '*.md': ['prettier --write'],
 };

@@ -28,4 +28,7 @@ export default defineConfig([
       '@typescript-eslint/no-explicit-any': 'error', // 禁止使用 any 类型
     },
   },
+  {
+    ignores: ['dist', 'build', 'node_modules', 'public'],
+  },
 ]);
