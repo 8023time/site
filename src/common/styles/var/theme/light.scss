@@ -4,7 +4,7 @@
 // 浅色主题变量
 :root {
   // === 核心背景色 ===
-  --#{$cm-namespace}-bg-color: #ffffff; // 元素级别背景色
+  --#{$cm-namespace}-bg-color: #fff; // 元素级别背景色
   --#{$cm-namespace}-bg-color-page: #f6f8fc; // 页面级别背景颜色
 
   // === 功能色 ===
@@ -19,7 +19,7 @@
   @include generate-color-variants('secondary', #a3adbb);
 
   // === 基本色 ===
-  --#{$cm-namespace}-color: #ffffff;
+  --#{$cm-namespace}-color: #fff;
   --#{$cm-namespace}-light: #f9f9f9;
   --#{$cm-namespace}-dark: #1e2129;
 

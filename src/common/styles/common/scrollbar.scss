@@ -4,8 +4,8 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #8c8787;
   border-radius: 2.5px;
+  background: #8c8787;
   transition: 0.35s background-color;
 }
 
@@ -18,10 +18,10 @@
 }
 
 .halo-container::before {
-  content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);
-  pointer-events: none;
   z-index: -1;
+  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);
+  content: '';
+  inset: 0;
+  pointer-events: none;
 }
