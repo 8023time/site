@@ -4,6 +4,8 @@
     "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
     "streetsidesoftware.code-spell-checker",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "stylelint.vscode-stylelint",
+    "burkeholland.simple-react-snippets"
   ]
 }
